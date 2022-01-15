@@ -1,0 +1,84 @@
+PODS:
+  - Alamofire (4.9.1)
+  - CalendarFoundation (0.0.4)
+  - DatePicker (1.0.1):
+    - Extended (~> 1.0.4)
+  - DropDown (2.3.13)
+  - Extended (1.0.5)
+  - EzPopup (1.1)
+  - FlagPhoneNumber (0.7.8):
+    - FlagPhoneNumber/libPhoneNumberiOS (= 0.7.8)
+  - FlagPhoneNumber/libPhoneNumberiOS (0.7.8)
+  - GoogleMaps (3.6.0):
+    - GoogleMaps/Maps (= 3.6.0)
+  - GoogleMaps/Base (3.6.0)
+  - GoogleMaps/Maps (3.6.0):
+    - GoogleMaps/Base
+  - GooglePlaces (3.6.0):
+    - GoogleMaps/Base (= 3.6.0)
+  - ImageSlideshow/Core (1.8.1)
+  - ImageSlideshow/Kingfisher (1.8.1):
+    - ImageSlideshow/Core
+    - Kingfisher (> 3.0)
+  - IQKeyboardManagerSwift (6.5.4)
+  - Kingfisher (5.10.0):
+    - Kingfisher/Core (= 5.10.0)
+  - Kingfisher/Core (5.10.0)
+  - SideMenu (6.4.6)
+  - SVProgressHUD (2.2.5)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - CalendarFoundation
+  - DatePicker
+  - DropDown
+  - EzPopup
+  - FlagPhoneNumber
+  - GoogleMaps
+  - GooglePlaces
+  - ImageSlideshow/Kingfisher
+  - IQKeyboardManagerSwift
+  - Kingfisher
+  - SideMenu
+  - SVProgressHUD
+  - SwiftyJSON
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - CalendarFoundation
+    - DatePicker
+    - DropDown
+    - Extended
+    - EzPopup
+    - FlagPhoneNumber
+    - GoogleMaps
+    - GooglePlaces
+    - ImageSlideshow
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - SideMenu
+    - SVProgressHUD
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  CalendarFoundation: 4d4ee111ae9d34ea09d5809a867414a099719b23
+  DatePicker: adebbc11d7e198985f376e4943f844860bf019db
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  Extended: c463225e0c29b2823847866c1b106827772ac678
+  EzPopup: b959cfb0d70d782a28e770a96c454df0401467c7
+  FlagPhoneNumber: 366348d1d54f4828140c0c7f33ccb694c34ddcdd
+  GoogleMaps: 82f8fe307193bb4de6ef6bf9e88f1d624b718f9d
+  GooglePlaces: 1b9d29cf3e164903d873600f511f42acdfe85294
+  ImageSlideshow: 634865d7d4e96f21e3830a31b51bde768cc94cea
+  IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
+  Kingfisher: 0bf6eae7c2193f15719915fecb7c2c1c03855f3d
+  SideMenu: 43910eb6dc994dd59771f8e82573d04a9e776361
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: 870f23ebc218bca1bfaf52ad1d3934edbd0a3ace
+
+COCOAPODS: 1.8.3

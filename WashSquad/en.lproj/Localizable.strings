@@ -1,0 +1,72 @@
+/* 
+  Localizable.strings
+  WashSquad
+
+  Created by Eslam Moemen on 9/30/19.
+  Copyright © 2019 CreativeShare. All rights reserved.
+*/
+"Buy" = "Buy this book";
+"sv"="Loading\nPlease Wait";
+"login"="login";
+"cret"="Register";
+"connMSG"="Connection Error\nCheck your connection and try again";
+"err"="Error";
+"errll"="Something went Error\nPlease try again later ";
+"mobErr"="Error\nEnter a Valid Phone Number";
+"allof"="Error\nPlease Enter all Details";
+"done"="Done";
+"inv"="Error\nInvalid Phone or Password";
+"su"="Success";
+"resEn"="App Needs Restart to Change it's Language";
+"AppRes"="Restart App?";
+"regBut"="Register!";
+"cm"="Camera";
+"glry"="Photos";
+"upldpho"="Uplaod Photo";
+"mr"="More";
+"ere"="Write Your Message";
+"nam"="Name";
+"addr"="Address";
+"pho"="Phone";
+"pri"="Price";
+"reg"="You Should REGISTER to View selected Content";
+"cann"="Cancel";
+"err404"="your number isn't registered ,please register ";
+"resend"="Resend";
+"CRT"="Success\nAdded to Cart";
+"ordNow"="ORDER NOW!";
+"adnv"="Add Another Viecle";
+"maxx"="The maximum number of requests for the selected service has been exceeded";
+"EMPY"="NO Orders Data!";
+"psSUC"="Change Password Success";
+"sus"="Error\nthis Account is Suspended";
+"fbe"="Error\nthis Account is Already Exists";
+"prof"="Profile";
+"srvs"="Services";
+"ofrs"="Offers";
+"crt$"="Cart";
+"errcode"="Wrong Code!";
+"crt"="Cart";
+"offs"="Offers";
+"wa"="Wash";
+"pro"="Profile";
+"md"="More Details";
+"ld"="Less Details";
+"CB"="Choose Band";
+"tpmap"="Please Tap on Map to Mark Location ";
+"noDB"="Coupon not Found!";
+"sucv"="Congratulations\nYou Got a ";
+"Disc"=" Discount";
+"suord"="Sending Order Success !";
+"iodate"="Date";
+"ppRice"="Total Price: ";
+"rate"="Service Rating";
+"rts"="Rate Send Success!";
+"noComp"="Order Not Completed yet!";
+"ryal"="SAR";
+"VSND"="Send";
+"ret"="return";
+"FRGPASS"="Forget Password?";
+
+
+

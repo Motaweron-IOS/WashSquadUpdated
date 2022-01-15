@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="19A583" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CartModel" representedClassName="CartModel" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="brandId" optional="YES" attributeType="String"/>
+        <attribute name="carSizeId" optional="YES" attributeType="String"/>
+        <attribute name="carTypeId" optional="YES" attributeType="String"/>
+        <attribute name="carTypeName" optional="YES" attributeType="String"/>
+        <attribute name="couponSerial" optional="YES" attributeType="String"/>
+        <attribute name="latitude" optional="YES" attributeType="String"/>
+        <attribute name="longitude" optional="YES" attributeType="String"/>
+        <attribute name="numberOfCars" optional="YES" attributeType="String"/>
+        <attribute name="orderDate" optional="YES" attributeType="String"/>
+        <attribute name="orderTimeId" optional="YES" attributeType="String"/>
+        <attribute name="payment" optional="YES" attributeType="String"/>
+        <attribute name="paymentId" optional="YES" attributeType="String"/>
+        <attribute name="serviceId" optional="YES" attributeType="String"/>
+        <attribute name="servicePrice" optional="YES" attributeType="String"/>
+        <attribute name="servicesNames" optional="YES" attributeType="Transformable"/>
+        <attribute name="serviceTypeName" optional="YES" attributeType="String"/>
+        <attribute name="subServiceId" optional="YES" attributeType="String"/>
+        <attribute name="subServices" optional="YES" attributeType="Transformable"/>
+        <attribute name="totalPrice" optional="YES" attributeType="String"/>
+        <attribute name="userid" optional="YES" attributeType="String"/>
+        <attribute name="userName" optional="YES" attributeType="String"/>
+        <attribute name="userPhone" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="CartModel" positionX="-63" positionY="-18" width="128" height="388"/>
+    </elements>
+</model>
