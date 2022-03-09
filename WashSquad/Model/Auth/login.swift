@@ -158,7 +158,8 @@ class login: UIViewController,FPNTextFieldDelegate {
                         //support.saveUserId(token: JSON(result!)["id"].stringValue)
                         def.set(["name":JSON(result!)["full_name"].stringValue,"phone":"0" + JSON(result!)["phone"].stringValue,"logo":UIImage(named: "user-1")!.jpegData(compressionQuality: 1.0)!], forKey:"userData")
                         def.set(JSON(result!)["id"].stringValue, forKey: "tempID")
-                        let sb = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "check")
+                        let sb = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "check") as! checkPhone
+                        sb.result = JSON(result!)
                         self.present(sb, animated: true, completion: nil)
                     case 406:
                         self.acc.stopAnimating()
@@ -171,7 +172,6 @@ class login: UIViewController,FPNTextFieldDelegate {
                 }
             }else {
                 acc.startAnimating()
-                print("🚀 phoneCode === \(self.Pcode)")
                 api.login(URL: loginUrl, phone: pho, PhoneCode:  Pcode ?? "00966", Pass: pass.replacedArabicDigitsWithEnglish) { (error, result, code) in
                     switch code {
                     case 200:
@@ -208,12 +208,7 @@ class login: UIViewController,FPNTextFieldDelegate {
 
                     }
                 }
-            }
-            
-        }
-        
-      
-    }
+        }}}
     
     
     func setupPhoneTF(){

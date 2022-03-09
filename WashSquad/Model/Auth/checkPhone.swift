@@ -11,6 +11,7 @@ import SwiftyJSON
 import EzPopup
 
 class checkPhone: UIViewController {
+    
     @IBOutlet var BtnTimer: UIButton!
     @IBOutlet var check: UIButton!
     @IBOutlet var checkTF: UITextField!
@@ -27,8 +28,11 @@ class checkPhone: UIViewController {
     var Pcode:String?
     var codeD:String?
     
+    var result:JSON?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         check.layer.cornerRadius = 15.0
         check.clipsToBounds = true
         //
@@ -52,7 +56,8 @@ class checkPhone: UIViewController {
                         dismissSvProgressHUD()
                      self.code = JSON(result!)["confirmation_code"].stringValue
                         print("localeCode:",self.code!)
-                    
+                        guard !(self.code?.isEmpty ?? true) else { return }
+                        showSuccessWithStatus(self.code!.description)
                     }else {
                     dismissSvProgressHUD()
                         showErrorWithStatus(Localized("errll"))
@@ -149,7 +154,10 @@ class checkPhone: UIViewController {
                api.confirmCode(URL:confirmcode ,code:code!) { (error, result, code) in
                    if code == 200{
                        dismissSvProgressHUD()
+                       def.set(["name":JSON(result!)["full_name"].stringValue,"phone":"0" + JSON(result!)["phone"].stringValue,"logo":UIImage(named: "user-1")!.jpegData(compressionQuality: 1.0)!], forKey:"userData")
+                       def.set(JSON(result!)["id"].stringValue, forKey: "tempID")
                        self.id = def.string(forKey: "tempID")!
+                       def.set(JSON(result!)["id"].stringValue, forKey: "user_id")
                        support.saveUserId(token:self.id!)
                        support.restartApp()
 
