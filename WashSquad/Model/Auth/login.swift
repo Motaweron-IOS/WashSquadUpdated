@@ -21,14 +21,14 @@ class login: UIViewController,FPNTextFieldDelegate {
     @IBOutlet var phoneTF: FPNTextField!
     @IBOutlet var codeTF: UITextField!
     @IBOutlet var register: UIButton!
-    @IBOutlet var regbutton: UIButton!
-    @IBOutlet var skipButton: UIButton!
+   // @IBOutlet var regbutton: UIButton!
     @IBOutlet var forgetPass: UIButton!
     @IBOutlet var userName: UITextField!
     
     var Phone:String?
     var Pcode:String?
     var error:Bool?
+    lazy var isRegister:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +53,8 @@ class login: UIViewController,FPNTextFieldDelegate {
         register.layer.cornerRadius = 10.0
         register.clipsToBounds = true
         
+        self.checkIsRegister()
+        
     }
     
     @IBAction func skipTapped(_ sender: Any) {
@@ -63,33 +65,33 @@ class login: UIViewController,FPNTextFieldDelegate {
 
         if codeView.isHidden == true {
             register.setTitle(Localized("login"), for: .normal)
-            skipButton.isHidden = false
             codeView.isHidden = false
-            regbutton.isHidden = false
+           // regbutton.isHidden = false
             forgetPass.setTitle(Localized("FRGPASS"), for: .normal)
-            regbutton.setTitle(Localized("cret"), for: .normal)
+         //   regbutton.setTitle(Localized("cret"), for: .normal)
         }else {
             userView.isHidden = true
             register.setTitle(Localized("VSND"), for: .normal)
-            skipButton.isHidden = true
             codeView.isHidden = true
-            regbutton.isHidden = true
+        //    regbutton.isHidden = true
             forgetPass.setTitle(Localized("ret"), for: .normal)
         }
         
         
     }
     @IBAction func registerBTapped(_ sender: Any) {
-        if regbutton.titleLabel?.text == NSLocalizedString("cret", comment: ""){
-            userView.isHidden = false
-            regbutton.setTitle(NSLocalizedString("login", comment: ""), for: .normal)
-            register.setTitle(NSLocalizedString("cret", comment: ""), for: .normal)
-
-        }else{
-            userView.isHidden = true
-            regbutton.setTitle(NSLocalizedString("cret", comment: ""), for: .normal)
-            register.setTitle(NSLocalizedString("login", comment: ""), for: .normal)
-        }
+        self.dismiss(animated: true, completion: nil)
+//        if regbutton.titleLabel?.text == NSLocalizedString("cret", comment: ""){
+//            userView.isHidden = false
+//            regbutton.setTitle(NSLocalizedString("login", comment: ""), for: .normal)
+//            register.setTitle(NSLocalizedString("cret", comment: ""), for: .normal)
+//            self.isRegister = true
+//        }else{
+//            self.isRegister = false
+//            userView.isHidden = true
+//            regbutton.setTitle(NSLocalizedString("cret", comment: ""), for: .normal)
+//            register.setTitle(NSLocalizedString("login", comment: ""), for: .normal)
+//        }
     }
     
     
@@ -169,6 +171,7 @@ class login: UIViewController,FPNTextFieldDelegate {
                 }
             }else {
                 acc.startAnimating()
+                print("🚀 phoneCode === \(self.Pcode)")
                 api.login(URL: loginUrl, phone: pho, PhoneCode:  Pcode ?? "00966", Pass: pass.replacedArabicDigitsWithEnglish) { (error, result, code) in
                     switch code {
                     case 200:
@@ -240,6 +243,18 @@ class login: UIViewController,FPNTextFieldDelegate {
         } else {
             error = true
             
+        }
+    }
+    
+    private func checkIsRegister() {
+        if self.isRegister == true {
+            userView.isHidden = false
+           // regbutton.setTitle(NSLocalizedString("login", comment: ""), for: .normal)
+            register.setTitle(NSLocalizedString("cret", comment: ""), for: .normal)
+        }else {
+            userView.isHidden = true
+         //   regbutton.setTitle(NSLocalizedString("cret", comment: ""), for: .normal)
+            register.setTitle(NSLocalizedString("login", comment: ""), for: .normal)
         }
     }
     

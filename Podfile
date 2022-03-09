@@ -17,7 +17,7 @@ target 'WashSquad' do
   pod 'GooglePlaces'
   pod 'GoogleMaps'
   pod 'EzPopup'
-  pod 'SideMenu'
+ # pod 'SideMenu'
   pod 'CalendarFoundation'
   pod 'DatePicker'
 
