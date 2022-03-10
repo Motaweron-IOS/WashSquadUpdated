@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8427902427D8FC3600B14E44 /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427902327D8FC3600B14E44 /* IntroVC.swift */; };
+		84D545DF27DA4BBC00E0B852 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D545DE27DA4BBC00E0B852 /* ProfileVC.swift */; };
 		A9047A082345F95600D19C67 /* washMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9047A072345F95600D19C67 /* washMain.swift */; };
 		A9047A0B2345FA8D00D19C67 /* washMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9047A0A2345FA8D00D19C67 /* washMainCell.swift */; };
 		A9047A0D234622B500D19C67 /* washSub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9047A0C234622B500D19C67 /* washSub.swift */; };
@@ -55,6 +56,7 @@
 		62AC1C31031B36607217C063 /* Pods_WashSquad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WashSquad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BB9B78C7AFF33D7A5DD7E8 /* Pods-WashSquad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WashSquad.release.xcconfig"; path = "Target Support Files/Pods-WashSquad/Pods-WashSquad.release.xcconfig"; sourceTree = "<group>"; };
 		8427902327D8FC3600B14E44 /* IntroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
+		84D545DE27DA4BBC00E0B852 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		A9047A072345F95600D19C67 /* washMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = washMain.swift; sourceTree = "<group>"; };
 		A9047A0A2345FA8D00D19C67 /* washMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = washMainCell.swift; sourceTree = "<group>"; };
 		A9047A0C234622B500D19C67 /* washSub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = washSub.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				A95E9C722354A80D0062AAA2 /* Profile.swift */,
 				A97881AB2355EB17005F3D76 /* Cells */,
 				A9DD0B04238AB9EA009306FD /* Infosection */,
+				84D545DE27DA4BBC00E0B852 /* ProfileVC.swift */,
 			);
 			path = profile;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				A9047A0F23462E0900D19C67 /* subSubWashMain.swift in Sources */,
 				A97881AA2355BF5C005F3D76 /* OffersCell.swift in Sources */,
 				A9047A082345F95600D19C67 /* washMain.swift in Sources */,
+				84D545DF27DA4BBC00E0B852 /* ProfileVC.swift in Sources */,
 				A9DD0AFF23894DF1009306FD /* CartPresistantdata.swift in Sources */,
 				A9DD0B03238AB294009306FD /* InfoSection.swift in Sources */,
 				A97881AD2355EB34005F3D76 /* ordersCell.swift in Sources */,

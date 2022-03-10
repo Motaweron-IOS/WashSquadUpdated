@@ -13,14 +13,32 @@ import Kingfisher
 var servicesmain = [allServices]()
 
 class washMain: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+    
+    
     var servicesSub = [[JSON]]()
     var serviceId:String?
+    
     @IBOutlet var mycollectionview: UICollectionView!
     
+   
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        servicesmain.removeAll()
-        getllServ()
+            super.viewWillAppear(animated)
+        
+        
+            servicesmain.removeAll()
+            getllServ()
+        
+            //navigationController?.navigationBar.prefersLargeTitles = true
+
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = UIColor(named: "Main")
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+
+            navigationController?.navigationBar.tintColor = .white
+            navigationController?.navigationBar.standardAppearance = appearance
+            navigationController?.navigationBar.compactAppearance = appearance
+            navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
     override func viewDidLoad() {
         super.viewDidLoad()

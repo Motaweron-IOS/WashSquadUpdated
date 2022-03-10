@@ -19,15 +19,8 @@ class Cart: UIViewController,UITableViewDelegate,UITableViewDataSource,UIScrollV
     @IBOutlet var addV: UIButton!
     @IBOutlet var myTableview: UITableView!
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        myTableview.reloadData()
-        if retrieveSavedUsers()?.count == 0 {
-            addV.setTitle(Localized("ordNow"), for: .normal)
-        }else{
-            addV.setTitle(Localized("adnv"), for: .normal)
-        }
-    }
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = Localized("crt$")
@@ -36,7 +29,27 @@ class Cart: UIViewController,UITableViewDelegate,UITableViewDataSource,UIScrollV
 
     }
     
-  
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        myTableview.reloadData()
+        if retrieveSavedUsers()?.count == 0 {
+            addV.setTitle(Localized("ordNow"), for: .normal)
+        }else{
+            addV.setTitle(Localized("adnv"), for: .normal)
+        }
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor(named: "Main")
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
+    }
     @objc func ref(){
         myTableview.reloadData()
     }

@@ -53,6 +53,17 @@ class Profile: uploadPhoto,UICollectionViewDelegate,UICollectionViewDataSource,U
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor(named: "Main")
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
     }
     
     override func viewDidLoad() {
@@ -145,36 +156,38 @@ class Profile: uploadPhoto,UICollectionViewDelegate,UICollectionViewDataSource,U
     override func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+    
+    //.MARK: - Logout
     @IBAction func logout(_ sender: Any) {
-        if !api.isConnectedToInternet() {
-            alert.alertPopUp(title:Localized("err"), msg: Localized("connMSG"), vc: self)
-            return
-            }
-        if !support.checkUserId{
-            alert.registerAlert(v: self)
-            return
-        }
-        
-        showSvProgressHUDwithStatus(nil)
-        api.Logout(URL: logOutUrl, userId:support.getuserId){ (error, result, code) in
-            switch code {
-            case 200:
-                dismissSvProgressHUD()
-                support.deleteAllData
-                deleteAllData(entity:"CartModel")
-                self.present(self.storyboard!.instantiateViewController(withIdentifier: "loginVC"), animated: true, completion: nil)
-             
-            default:
-                dismissSvProgressHUD()
-                alert.alertPopUp(title: Localized("err"), msg: Localized("errll"), vc: self)
-                
-            }
-        }
+//        if !api.isConnectedToInternet() {
+//            alert.alertPopUp(title:Localized("err"), msg: Localized("connMSG"), vc: self)
+//            return
+//            }
+//        if !support.checkUserId{
+//            alert.registerAlert(v: self)
+//            return
+//        }
+//
+//        showSvProgressHUDwithStatus(nil)
+//        api.Logout(URL: logOutUrl, userId:support.getuserId){ (error, result, code) in
+//            switch code {
+//            case 200:
+//                dismissSvProgressHUD()
+//                support.deleteAllData
+//                deleteAllData(entity:"CartModel")
+//                self.present(self.storyboard!.instantiateViewController(withIdentifier: "loginVC"), animated: true, completion: nil)
+//
+//            default:
+//                dismissSvProgressHUD()
+//                alert.alertPopUp(title: Localized("err"), msg: Localized("errll"), vc: self)
+//
+//            }
+//        }
     }
     
-    
+     //MARK: - Setting button
     @IBAction func infotapped(_ sender: Any) {
-        performSegue(withIdentifier: "infosecs", sender: self)
+      //  performSegue(withIdentifier: "infosecs", sender: self)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -244,6 +257,53 @@ class Profile: uploadPhoto,UICollectionViewDelegate,UICollectionViewDataSource,U
     
     
     
+   
+
+    
+
+}
+//MARK: - Rate
+extension Profile {
+    func rate(sender:Int){
+        switch sender {
+        case 1:
+            rate1.setImage(UIImage(named: "rateOn"), for: .normal)
+            rate2.setImage(UIImage(named: "rateOff"), for: .normal)
+            rate3.setImage(UIImage(named: "rateOff"), for: .normal)
+            rate4.setImage(UIImage(named: "rateOff"), for: .normal)
+            rate5.setImage(UIImage(named: "rateOff"), for: .normal)
+        case 2:
+           rate1.setImage(UIImage(named: "rateOn"), for: .normal)
+            rate2.setImage(UIImage(named: "rateOn"), for: .normal)
+            rate3.setImage(UIImage(named: "rateOff"), for: .normal)
+            rate4.setImage(UIImage(named: "rateOff"), for: .normal)
+            rate5.setImage(UIImage(named: "rateOff"), for: .normal)
+        case 3:
+            rate1.setImage(UIImage(named: "rateOn"), for: .normal)
+            rate2.setImage(UIImage(named: "rateOn"), for: .normal)
+            rate3.setImage(UIImage(named: "rateOn"), for: .normal)
+            rate4.setImage(UIImage(named: "rateOff"), for: .normal)
+            rate5.setImage(UIImage(named: "rateOff"), for: .normal)
+        case 4:
+            rate1.setImage(UIImage(named: "rateOn"), for: .normal)
+            rate2.setImage(UIImage(named: "rateOn"), for: .normal)
+            rate3.setImage(UIImage(named: "rateOn"), for: .normal)
+            rate4.setImage(UIImage(named: "rateOn"), for: .normal)
+            rate5.setImage(UIImage(named: "rateOff"), for: .normal)
+        case 5:
+            rate1.setImage(UIImage(named: "rateOn"), for: .normal)
+            rate2.setImage(UIImage(named: "rateOn"), for: .normal)
+            rate3.setImage(UIImage(named: "rateOn"), for: .normal)
+            rate4.setImage(UIImage(named: "rateOn"), for: .normal)
+            rate5.setImage(UIImage(named: "rateOn"), for: .normal)
+        default:
+            return
+            
+        }
+    }
+}
+//MARK: - CollectionView
+extension Profile {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if ordersData.count == 0 {
             if Locale.preferredLanguages[0] == "ar"{collectionView.setEmptyMessage(Localized("EMPY"));collectionView.backgroundView?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0) }else {collectionView.setEmptyMessage(Localized("EMPY"))}
@@ -314,46 +374,4 @@ class Profile: uploadPhoto,UICollectionViewDelegate,UICollectionViewDataSource,U
         }
     }
     
-
-    
-
-}
-extension Profile {
-    func rate(sender:Int){
-        switch sender {
-        case 1:
-            rate1.setImage(UIImage(named: "rateOn"), for: .normal)
-            rate2.setImage(UIImage(named: "rateOff"), for: .normal)
-            rate3.setImage(UIImage(named: "rateOff"), for: .normal)
-            rate4.setImage(UIImage(named: "rateOff"), for: .normal)
-            rate5.setImage(UIImage(named: "rateOff"), for: .normal)
-        case 2:
-           rate1.setImage(UIImage(named: "rateOn"), for: .normal)
-            rate2.setImage(UIImage(named: "rateOn"), for: .normal)
-            rate3.setImage(UIImage(named: "rateOff"), for: .normal)
-            rate4.setImage(UIImage(named: "rateOff"), for: .normal)
-            rate5.setImage(UIImage(named: "rateOff"), for: .normal)
-        case 3:
-            rate1.setImage(UIImage(named: "rateOn"), for: .normal)
-            rate2.setImage(UIImage(named: "rateOn"), for: .normal)
-            rate3.setImage(UIImage(named: "rateOn"), for: .normal)
-            rate4.setImage(UIImage(named: "rateOff"), for: .normal)
-            rate5.setImage(UIImage(named: "rateOff"), for: .normal)
-        case 4:
-            rate1.setImage(UIImage(named: "rateOn"), for: .normal)
-            rate2.setImage(UIImage(named: "rateOn"), for: .normal)
-            rate3.setImage(UIImage(named: "rateOn"), for: .normal)
-            rate4.setImage(UIImage(named: "rateOn"), for: .normal)
-            rate5.setImage(UIImage(named: "rateOff"), for: .normal)
-        case 5:
-            rate1.setImage(UIImage(named: "rateOn"), for: .normal)
-            rate2.setImage(UIImage(named: "rateOn"), for: .normal)
-            rate3.setImage(UIImage(named: "rateOn"), for: .normal)
-            rate4.setImage(UIImage(named: "rateOn"), for: .normal)
-            rate5.setImage(UIImage(named: "rateOn"), for: .normal)
-        default:
-            return
-            
-        }
-    }
 }

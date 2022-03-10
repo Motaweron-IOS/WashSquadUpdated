@@ -18,7 +18,11 @@ class login: UIViewController,FPNTextFieldDelegate {
     @IBOutlet var userView: UIView!
     @IBOutlet var phoneView: UIView!
     @IBOutlet var codeView: UIView!
-    @IBOutlet var phoneTF: FPNTextField!
+    @IBOutlet var phoneTF: FPNTextField!{
+        didSet{
+            self.phoneTF.delegate = self
+        }
+    }
     @IBOutlet var codeTF: UITextField!
     @IBOutlet var register: UIButton!
    // @IBOutlet var regbutton: UIButton!
@@ -255,3 +259,11 @@ class login: UIViewController,FPNTextFieldDelegate {
     
 }
 
+extension login : UITextFieldDelegate {
+     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+         if textField == self.phoneTF {
+             return range.location == 10
+         }
+         return true
+    }
+}
