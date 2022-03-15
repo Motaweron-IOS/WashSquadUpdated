@@ -35,3 +35,4 @@ let getPriceUrl = mainURL + "getPrice"
 let passwordChangeUrl = mainURL + "client/password/change"
 let frogetPassUrl = mainURL + "client/password/forget"
 
+let userSubscriptionURL = mainURL + "order/getSubscription?user_id=\(support.getuserId)"

@@ -259,11 +259,11 @@ class login: UIViewController,FPNTextFieldDelegate {
     
 }
 
-extension login : UITextFieldDelegate {
-     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-         if textField == self.phoneTF {
-             return range.location == 10
-         }
-         return true
-    }
-}
+//extension login : UITextFieldDelegate {
+//     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//         if textField == self.phoneTF {
+//             return range.location == 10
+//         }
+//         return true
+//    }
+//}

@@ -146,6 +146,30 @@
 			path = into;
 			sourceTree = "<group>";
 		};
+		84C8029427DE3E3E004F9093 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				84C8029627DE3E4F004F9093 /* model */,
+				84C8029527DE3E4A004F9093 /* view */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		84C8029527DE3E4A004F9093 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				84D545DE27DA4BBC00E0B852 /* ProfileVC.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		84C8029627DE3E4F004F9093 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		8FAE7D6527DBB40C0090D00B /* myWallet */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,7 +220,7 @@
 		A90479ED2345F2D700D19C67 /* profile */ = {
 			isa = PBXGroup;
 			children = (
-				84D545DE27DA4BBC00E0B852 /* ProfileVC.swift */,
+				84C8029427DE3E3E004F9093 /* Profile */,
 				A95E9C722354A80D0062AAA2 /* Profile.swift */,
 				A97881AB2355EB17005F3D76 /* Cells */,
 				A9DD0B04238AB9EA009306FD /* Infosection */,

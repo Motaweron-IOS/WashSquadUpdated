@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MOLH
+//import MOLH
 
 
 extension UIView {
@@ -76,11 +76,11 @@ extension UIView {
     func addSwipActionn(vc:UIViewController,action: Selector){
         let swipGestureRecognizer = UISwipeGestureRecognizer(target: vc, action: action)
 
-        if MOLHLanguage.currentAppleLanguage() == "ar" {
+        //if MOLHLanguage.currentAppleLanguage() == "ar" {
             swipGestureRecognizer.direction = .left
-        }else {
-            swipGestureRecognizer.direction = .right
-        }
+//        }else {
+//            swipGestureRecognizer.direction = .right
+//        }
         
         self.isUserInteractionEnabled = true
         self.addGestureRecognizer(swipGestureRecognizer)

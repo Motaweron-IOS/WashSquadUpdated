@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="we4-pF-sVK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="we4-pF-sVK">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -248,7 +248,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFe-4G-2aw">
-                                <rect key="frame" x="211" y="538.66666666666663" width="152" height="30"/>
+                                <rect key="frame" x="219" y="538.66666666666663" width="144" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="90l-75-mB0"/>
                                 </constraints>
@@ -4008,7 +4008,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gTP-66-PGC">
                                                         <rect key="frame" x="0.0" y="8" width="345" height="275"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e7z-TQ-lGS">
+                                                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e7z-TQ-lGS">
                                                                 <rect key="frame" x="0.0" y="0.0" width="345" height="65"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0S-Qz-ZkT">
@@ -4046,7 +4046,7 @@
                                                                     <constraint firstAttribute="trailing" secondItem="vQp-Rk-nV7" secondAttribute="trailing" id="uAa-ft-4di"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoY-B8-eiR">
+                                                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoY-B8-eiR">
                                                                 <rect key="frame" x="0.0" y="70" width="345" height="65"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscriptions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmR-wO-2vY">
@@ -4083,7 +4083,7 @@
                                                                     <constraint firstAttribute="trailing" secondItem="0kK-xG-GOM" secondAttribute="trailing" constant="12" id="l7p-CW-Dac"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9wC-2Q-Z4v">
+                                                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9wC-2Q-Z4v">
                                                                 <rect key="frame" x="0.0" y="140" width="345" height="65"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The app" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9G-t4-gtR">
@@ -4120,7 +4120,7 @@
                                                                     <constraint firstAttribute="trailing" secondItem="vzs-pH-9Fe" secondAttribute="trailing" constant="12" id="tTK-WH-VfO"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMl-CG-367">
+                                                            <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMl-CG-367">
                                                                 <rect key="frame" x="0.0" y="210" width="345" height="65"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help and support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUP-lm-w1g">
@@ -4314,7 +4314,7 @@
                         <outletCollection property="viewsCollection" destination="9wC-2Q-Z4v" collectionClass="NSMutableArray" id="E6f-hO-WUf"/>
                         <outletCollection property="viewsCollection" destination="HoY-B8-eiR" collectionClass="NSMutableArray" id="Hsn-c3-aNP"/>
                         <outletCollection property="viewsCollection" destination="e7z-TQ-lGS" collectionClass="NSMutableArray" id="DaH-NV-q0Y"/>
-                        <segue destination="3XV-v2-l8N" kind="show" id="6Wy-s5-iv5"/>
+                        <segue destination="3XV-v2-l8N" kind="show" identifier="toWallet" id="6Wy-s5-iv5"/>
                         <segue destination="V6L-fT-6tR" kind="show" id="6f7-fy-hKg"/>
                     </connections>
                 </viewController>
@@ -4634,7 +4634,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zd0-gf-Pk7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9183" y="1802"/>
+            <point key="canvasLocation" x="-9182" y="1794"/>
         </scene>
     </scenes>
     <designables>
