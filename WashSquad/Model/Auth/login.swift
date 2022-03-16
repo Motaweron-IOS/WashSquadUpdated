@@ -153,7 +153,9 @@ class login: UIViewController,FPNTextFieldDelegate {
                 return
                   }
                 acc.startAnimating()
+                print("🚀 im here")
                 api.register(URL: registerUrl, username: user, phone: pho, PhoneCode: Pcode ?? "00966", Pass: pass.replacedArabicDigitsWithEnglish) { (error, result, code) in
+                    print("🚀 im here register")
                     switch code {
                     case 200:
                         self.acc.stopAnimating()
@@ -176,21 +178,29 @@ class login: UIViewController,FPNTextFieldDelegate {
                 }
             }else {
                 acc.startAnimating()
+                print("🚀 im here")
                 api.login(URL: loginUrl, phone: pho, PhoneCode:  Pcode ?? "00966", Pass: pass.replacedArabicDigitsWithEnglish) { (error, result, code) in
+                    print("🚀 im here two")
                     switch code {
                     case 200:
+                        print("🚀 im here three")
                         support.saveUserId(token:JSON(result!)["id"].stringValue)
+                        deleteAllData(entity: "CartModel")
+                        def.set(["name":JSON(result!)["full_name"].stringValue,"phone":"0" + JSON(result!)["phone"].stringValue], forKey:"userData")
+                        support.restartApp()
+
                         //support.saveUserType(type:JSON(result!)["user_type"].stringValue )
                         KingfisherManager.shared.retrieveImage(with: ImageResource(downloadURL: URL(string: imageURL + JSON(result!)["logo"].stringValue)!), options: nil, progressBlock: nil, downloadTaskUpdated: nil) { (resultf) in
+                            print("🚀 im here two")
                             switch resultf {
                             case .success(let value):
                                 print("Got Here!")
-                                deleteAllData(entity: "CartModel")
-                                def.set(["name":JSON(result!)["full_name"].stringValue,"phone":"0" + JSON(result!)["phone"].stringValue,"logo":value.image.jpegData(compressionQuality: 1.0)!], forKey:"userData")
-                                self.acc.stopAnimating()
-                                support.restartApp()
+                              //  deleteAllData(entity: "CartModel")
+//                                def.set(["name":JSON(result!)["full_name"].stringValue,"phone":"0" + JSON(result!)["phone"].stringValue,"logo":value.image.jpegData(compressionQuality: 1.0)!], forKey:"userData")
+                                    //self.acc.stopAnimating()
+                              //  support.restartApp()
                             case .failure(let error):
-                                print(error)
+                                print(error.localizedDescription)
                             }
                         }
                         

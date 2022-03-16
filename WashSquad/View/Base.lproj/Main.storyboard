@@ -1499,7 +1499,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4G6-0M-9h2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-8422" y="2568"/>
+            <point key="canvasLocation" x="-8401" y="2580"/>
         </scene>
         <!--Repeated Questions-->
         <scene sceneID="fia-tU-dVL">
@@ -3911,12 +3911,12 @@
                                 <rect key="frame" x="0.0" y="112" width="375" height="529"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NlX-qz-zvb">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="589"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghS-bk-NiF">
-                                                <rect key="frame" x="15" y="8" width="345" height="130"/>
+                                                <rect key="frame" x="15" y="8" width="345" height="150"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-1" translatesAutoresizingMaskIntoConstraints="NO" id="FPb-i5-8uz">
+                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cacarx" translatesAutoresizingMaskIntoConstraints="NO" id="FPb-i5-8uz">
                                                         <rect key="frame" x="12" y="20" width="60" height="60"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <gestureRecognizers/>
@@ -3966,24 +3966,77 @@
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subscriptions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4r-Ti-NrL">
+                                                        <rect key="frame" x="5.6666666666666714" y="88" width="73" height="24.666666666666671"/>
+                                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="13"/>
+                                                        <color key="textColor" name="Main"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No subsriptions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAs-DA-RSP">
+                                                        <rect key="frame" x="136.33333333333334" y="62.000000000000007" width="92.333333333333343" height="26.333333333333336"/>
+                                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="sQ0-SC-z0B">
+                                                        <rect key="frame" x="74" y="115" width="266" height="30"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXT-Q8-oCs">
+                                                                <rect key="frame" x="0.0" y="0.0" width="130" height="30"/>
+                                                                <color key="backgroundColor" name="Main"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Request postponement"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WL8-wK-D6s">
+                                                                <rect key="frame" x="136" y="0.0" width="130" height="30"/>
+                                                                <color key="backgroundColor" name="Main"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="4bP-we-zJz"/>
+                                                                    <constraint firstAttribute="width" constant="130" id="zve-IR-U16"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="subscripe"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="130" id="2dC-6P-xg5"/>
+                                                    <constraint firstItem="M4r-Ti-NrL" firstAttribute="top" secondItem="FPb-i5-8uz" secondAttribute="bottom" constant="8" symbolic="YES" id="2aU-uM-ITg"/>
+                                                    <constraint firstAttribute="height" constant="150" id="2dC-6P-xg5"/>
                                                     <constraint firstItem="FPb-i5-8uz" firstAttribute="top" secondItem="Uf4-4b-qd7" secondAttribute="top" id="4Dx-WH-vqB"/>
+                                                    <constraint firstItem="UAs-DA-RSP" firstAttribute="centerY" secondItem="ghS-bk-NiF" secondAttribute="centerY" id="610-kf-MdS"/>
                                                     <constraint firstItem="Uf4-4b-qd7" firstAttribute="leading" secondItem="FPb-i5-8uz" secondAttribute="trailing" constant="30" id="8uU-D4-42g"/>
+                                                    <constraint firstAttribute="trailing" secondItem="sQ0-SC-z0B" secondAttribute="trailing" constant="5" id="JJl-u0-scO"/>
+                                                    <constraint firstItem="M4r-Ti-NrL" firstAttribute="centerX" secondItem="FPb-i5-8uz" secondAttribute="centerX" id="LOx-tc-pxT"/>
                                                     <constraint firstItem="FPb-i5-8uz" firstAttribute="leading" secondItem="ghS-bk-NiF" secondAttribute="leading" constant="12" id="Y62-xx-QHU"/>
                                                     <constraint firstItem="cRh-1b-ojR" firstAttribute="centerX" secondItem="iha-66-Eu1" secondAttribute="centerX" id="brA-7e-obo"/>
                                                     <constraint firstItem="Gk7-h4-RFR" firstAttribute="centerX" secondItem="ME7-Js-meH" secondAttribute="centerX" id="c7K-q7-lh7"/>
                                                     <constraint firstItem="nqK-zx-KfN" firstAttribute="centerY" secondItem="Gk7-h4-RFR" secondAttribute="centerY" id="fGW-wo-qsc"/>
                                                     <constraint firstItem="nqK-zx-KfN" firstAttribute="centerX" secondItem="CtF-rl-Tkb" secondAttribute="centerX" id="fPd-1U-DNc"/>
                                                     <constraint firstItem="Uf4-4b-qd7" firstAttribute="top" secondItem="ghS-bk-NiF" secondAttribute="top" constant="20" id="hUQ-yu-VTL"/>
+                                                    <constraint firstItem="UAs-DA-RSP" firstAttribute="centerX" secondItem="ghS-bk-NiF" secondAttribute="centerX" constant="10" id="i98-Hq-88x"/>
                                                     <constraint firstItem="Gk7-h4-RFR" firstAttribute="top" secondItem="Uf4-4b-qd7" secondAttribute="bottom" constant="15" id="oqM-XM-T77"/>
                                                     <constraint firstItem="cRh-1b-ojR" firstAttribute="centerY" secondItem="nqK-zx-KfN" secondAttribute="centerY" id="sBE-HQ-3g6"/>
+                                                    <constraint firstAttribute="bottom" secondItem="sQ0-SC-z0B" secondAttribute="bottom" constant="5" id="yaD-l4-OJJ"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="value" name="Main"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="10"/>
@@ -4003,7 +4056,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyg-cC-cjB">
-                                                <rect key="frame" x="15" y="146" width="345" height="291"/>
+                                                <rect key="frame" x="15" y="166" width="345" height="291"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gTP-66-PGC">
                                                         <rect key="frame" x="0.0" y="8" width="345" height="275"/>
@@ -4087,7 +4140,7 @@
                                                                 <rect key="frame" x="0.0" y="140" width="345" height="65"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The app" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9G-t4-gtR">
-                                                                        <rect key="frame" x="7.9999999999999964" y="17.666666666666686" width="53.666666666666657" height="30"/>
+                                                                        <rect key="frame" x="7.9999999999999964" y="17.666666666666629" width="53.666666666666657" height="30"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                                         <color key="textColor" name="Main"/>
                                                                         <nil key="highlightedColor"/>
@@ -4169,7 +4222,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICK-MJ-9hd">
-                                                <rect key="frame" x="110.66666666666669" y="449" width="154" height="80"/>
+                                                <rect key="frame" x="110.66666666666669" y="469" width="154" height="80"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Mgb-mR-5x0">
                                                         <rect key="frame" x="12" y="7" width="130" height="40"/>
@@ -4301,8 +4354,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="noSubscripeMessaageLab" destination="UAs-DA-RSP" id="N7g-ha-uZj"/>
+                        <outlet property="requestPostonementBtn" destination="JXT-Q8-oCs" id="aHK-MK-KEh"/>
+                        <outlet property="subscripeBtn" destination="WL8-wK-D6s" id="FvG-lL-JlL"/>
                         <outlet property="userPhoto" destination="tNn-5C-wUi" id="pK2-7t-Mfe"/>
-                        <outletCollection property="labelsCollection" destination="eKY-sb-GgD" collectionClass="NSMutableArray" id="Aot-wU-ZuW"/>
                         <outletCollection property="labelsCollection" destination="6Xu-G0-ywq" collectionClass="NSMutableArray" id="V38-af-ogN"/>
                         <outletCollection property="labelsCollection" destination="Gk7-h4-RFR" collectionClass="NSMutableArray" id="94L-8e-SE5"/>
                         <outletCollection property="labelsCollection" destination="nqK-zx-KfN" collectionClass="NSMutableArray" id="3NE-6R-EUZ"/>
@@ -4647,6 +4702,7 @@
         <image name="angle-right" width="512" height="512"/>
         <image name="bell-ring" width="512" height="512"/>
         <image name="bkArrow" width="30" height="30"/>
+        <image name="cacarx" width="195" height="139"/>
         <image name="calendar-Purple" width="256" height="256"/>
         <image name="calendar-x" width="256" height="256"/>
         <image name="clock-circular-outline" width="256" height="256"/>

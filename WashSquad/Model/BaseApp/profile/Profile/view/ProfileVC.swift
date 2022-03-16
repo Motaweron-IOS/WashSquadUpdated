@@ -15,12 +15,25 @@ class ProfileVC: UIViewController {
     @IBOutlet private var buttonsCollection: [UIButton]!
     @IBOutlet private var viewsCollection: [UIView]!
     
+    @IBOutlet weak var noSubscripeMessaageLab: UILabel!
+    
+    @IBOutlet private weak var subscripeBtn: UIButton!{
+        didSet{
+            self.subscripeBtn.setTitle(Localized("subscripe"), for: .normal)
+    }}
+    @IBOutlet private weak var requestPostonementBtn: UIButton!{
+        didSet{
+            self.requestPostonementBtn.setTitle(Localized("requestPostonement"), for: .normal)
+    }}
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.setViewActions()
+        self.getUserSubscription()
+        self.changeSubscripeApperance()
+
         
     }
     
@@ -63,7 +76,7 @@ extension ProfileVC {
     @objc private func performViewsActions(_ sender:AnyObject) {
         for i in viewsCollection {
             switch i.tag {
-              case 1 :performSegue(withIdentifier: "toWallet", sender: self)
+              case 1 : performSegue(withIdentifier: "toWallet", sender: self)
               case 2 : print("subscripe")
               case 3 : print("the app")
               case 4 : print("help")
@@ -71,20 +84,33 @@ extension ProfileVC {
     }}}
     
     
+    private func changeSubscripeApperance() {
+      for label in labelsCollection {
+        if support.checkUserId == false {
+            label.isHidden = true
+            self.noSubscripeMessaageLab.isHidden = false
+            self.requestPostonementBtn.isHidden = true
+        }else {
+            label.isHidden = false
+            self.noSubscripeMessaageLab.isHidden = true
+            self.requestPostonementBtn.isHidden = false
+    }}}
+    
+    
     
 }
-//MARK : - Networking
+//MARK: - Networking
 extension ProfileVC {
     
     private func getUserSubscription() {
         if support.checkUserId == true {
+            print("🚀 userSubscriptionURL = \(userSubscriptionURL)")
             api.userSubscription(URL: userSubscriptionURL) { error, result, code in
                 if code == 200 {
                     
                 }
             }
         }else{
-                            
         }
     }
     

@@ -37,6 +37,8 @@ class api: NSObject {
     class func register(URL:String,username:String,phone:String,PhoneCode:String,Pass:String,completion: @escaping(_ error:Error?,_ result:Any?,_ code:Int?)->Void) {
         let para = ["phone":phone,"phone_code":PhoneCode,"password":Pass,"full_name":username,"software_type":"2"]
         Alamofire.request(URL, method: .post, parameters: para, encoding: URLEncoding.default, headers: nil).validate(statusCode: 200..<600).responseJSON { (response) in
+            print("user register response  === \(response.response?.statusCode)")
+            print("user register response  === \(JSON(response.result))")
             completion(response.result.error,response.result.value,response.response?.statusCode)
             
         }
@@ -202,6 +204,8 @@ class api: NSObject {
     
     class func userSubscription(URL:String,completion: @escaping(_ error:Error?,_ result:Any?,_ code:Int?)->Void) {
         Alamofire.request(URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).validate(statusCode: 200..<600).responseJSON { (response) in
+            print("user subscrption response  === \(response.response?.statusCode)")
+            print("user subscrption response  === \(JSON(response.result))")
             completion(response.result.error,response.result.value,response.response?.statusCode)
         }
     }

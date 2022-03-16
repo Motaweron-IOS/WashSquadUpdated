@@ -10,7 +10,7 @@ import Foundation
 
 
 
-let mainURL = "https://washsquadsa.com/api/"
+let mainURL = "https://test.washsquadsa.com/api/"
 let imageURL =  "http://washsquadsa.com/upload/"
 let visitUrl = mainURL + "visit"
 let registerUrl = mainURL + "client/register"
