@@ -84,10 +84,54 @@
 "FRGPASS"="نسيت كلمة المرور?";
 "subscripe"="اشتراك";
 "requestPostonement"="طلب تأجيل";
-
-
-
-
-
-
-
+"codeHasBeenSend"="لقد تم إرسال كود التفعيل بنجاح";
+"new"="جديد";
+"wait"="في الإنتظار";
+"done"="مكتمل";
+"Language"="اللغة";
+"Yes"="نعم";
+"No"="لا";
+"Logout"="تسجيل الخروج";
+"Start day"="تاريخ البداية";
+"Left"="المتبقي";
+"Day"="يوم";
+"My Wallet"="محفظتي";
+"Subscriptions"="الإشتراكات";
+"The App"="التطبيق";
+"Help and support"="المساعدة والدعم";
+"Share and connact with us"="شارك وتواصل معانا";
+"Saturday"="السبت";
+"Sunday"="الأحد";
+"Monday"="الأثنين";
+"Tuesday"="الثلاثاء";
+"Wednesday"="الأربعاء";
+"Thursday"="الخميس";
+"Friday"="الجمعة";
+"Update"="تعديل";
+"details"="التفاصيل";
+"User name"="اسم المستخدم";
+"Phone number"="رقم الجوال";
+"Password"="الرقم السري";
+"Save"="حفظ";
+"takePhoto"="إلتقاط صورة";
+"cameraRoll"="معرض الصور";
+"photoLibrary"="مكتبة الصور";
+"canel"="إلغاء";
+"Profile"="الملف الشخصي";
+"Language"="اللغة";
+"Terms and conditions"="الشروط و الأحكام";
+"Logout"="تسجيل الخروج";
+"Subscribe"="طلب اشتراك";
+"Wash NO"="رقم الغسلة";
+"Date"="ترايخ الغسلة";
+"Day"="اليوم";
+"Status"="حالة الغسلة";
+"Wash details"="تفاصيل الغسلة";
+""="";
+""="";
+""="";
+""="";
+""="";
+""="";
+"Cash back"="رصيد كاش باك";
+"SAR"="ريال";

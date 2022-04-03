@@ -154,7 +154,7 @@ class login: UIViewController,FPNTextFieldDelegate {
                   }
                 acc.startAnimating()
                 print("🚀 im here")
-                api.register(URL: registerUrl, username: user, phone: pho, PhoneCode: Pcode ?? "00966", Pass: pass.replacedArabicDigitsWithEnglish) { (error, result, code) in
+                api.register(URL: registerUrl, username: user, phone: pho.trimmingCharacters(in: .whitespacesAndNewlines), PhoneCode: Pcode ?? "00966", Pass: pass.replacedArabicDigitsWithEnglish) { (error, result, code) in
                     print("🚀 im here register")
                     switch code {
                     case 200:
@@ -162,7 +162,10 @@ class login: UIViewController,FPNTextFieldDelegate {
                         deleteAllData(entity: "CartModel")
                         showSuccessWithStatus(Localized("su"))
                         //support.saveUserId(token: JSON(result!)["id"].stringValue)
-                        def.set(["name":JSON(result!)["full_name"].stringValue,"phone":"0" + JSON(result!)["phone"].stringValue,"logo":UIImage(named: "user-1")!.jpegData(compressionQuality: 1.0)!], forKey:"userData")
+                        def.set(["name":JSON(result!)["full_name"].stringValue,"phone": JSON(result!)["phone"].stringValue,"logo":UIImage(named: "user-1")!.jpegData(compressionQuality: 1.0)!], forKey:"userData")
+                      //  def.set(JSON(result!)["phone_code"].stringValue, forKey: "phone_code")
+                        def.set(self.Pcode ?? "00966", forKey: "phone_code")
+
                         def.set(JSON(result!)["id"].stringValue, forKey: "tempID")
                         let sb = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "check") as! checkPhone
                         sb.result = JSON(result!)
@@ -179,19 +182,21 @@ class login: UIViewController,FPNTextFieldDelegate {
             }else {
                 acc.startAnimating()
                 print("🚀 im here")
-                api.login(URL: loginUrl, phone: pho, PhoneCode:  Pcode ?? "00966", Pass: pass.replacedArabicDigitsWithEnglish) { (error, result, code) in
-                    print("🚀 im here two")
+                api.login(URL: loginUrl, phone: pho.trimmingCharacters(in: .whitespacesAndNewlines), PhoneCode:  Pcode ?? "00966", Pass: pass.replacedArabicDigitsWithEnglish) { (error, result, code) in
+                    print("🚀🚀 im here two")
                     switch code {
                     case 200:
-                        print("🚀 im here three")
+                        print("🚀🚀🚀 im here three")
                         support.saveUserId(token:JSON(result!)["id"].stringValue)
                         deleteAllData(entity: "CartModel")
-                        def.set(["name":JSON(result!)["full_name"].stringValue,"phone":"0" + JSON(result!)["phone"].stringValue], forKey:"userData")
+                        def.set(["name":JSON(result!)["full_name"].stringValue,"phone":JSON(result!)["phone"].stringValue], forKey:"userData")
+                        def.set(self.Pcode ?? "00966", forKey: "phone_code")
+                        
                         support.restartApp()
 
                         //support.saveUserType(type:JSON(result!)["user_type"].stringValue )
                         KingfisherManager.shared.retrieveImage(with: ImageResource(downloadURL: URL(string: imageURL + JSON(result!)["logo"].stringValue)!), options: nil, progressBlock: nil, downloadTaskUpdated: nil) { (resultf) in
-                            print("🚀 im here two")
+                            print("🚀🚀🚀🚀 im here two")
                             switch resultf {
                             case .success(let value):
                                 print("Got Here!")

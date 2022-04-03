@@ -18,10 +18,19 @@ class api: NSObject {
     
     class func login(URL:String,phone:String,PhoneCode:String,Pass:String,completion: @escaping(_ error:Error?,_ result:Any?,_ code:Int?)->Void) {
         let para = ["phone":phone,"phone_code":PhoneCode,"password":Pass]
+        print("✅ 🚀 bbody = \(para)")
         Alamofire.request(URL, method: .post, parameters: para, encoding: URLEncoding.default, headers: nil).validate(statusCode: 200..<600).responseJSON { (response) in
+            print("🚀 api login",response.response?.statusCode)
+            print(" api login resulat",response.result)
+            switch response.result {
+             case .success(let data):
+                 print("🚀 login , success")
+             case .failure(let err):
+                print("🔴 ❌ login , err \(err.localizedDescription)")
+
+
+            }
             completion(response.result.error,response.result.value,response.response?.statusCode)
-            print(response)
-            
         }
     }
     
@@ -71,9 +80,9 @@ class api: NSObject {
     
     
     
-    class func updateProfile(targetURL:String,name:String,pass:String,logo:UIImage,completion : @escaping (_ error:Error?,_ result:Any?,_ code:Int? ) -> Void){
+    class func updateProfile(targetURL:String,phone_code:String,phone:String,name:String,pass:String,logo:UIImage,completion : @escaping (_ error:Error?,_ result:Any?,_ code:Int? ) -> Void){
         
-        let par : [String:Any] = ["user_id":support.getuserId,"full_name":name,"password":pass]
+        let par : [String:Any] = ["user_id":support.getuserId,"full_name":name,"password":pass,"phone_code":phone_code,"phone":phone]
         
         Alamofire.upload(multipartFormData: { multipartFormData in
             for (key, value) in par {
@@ -91,6 +100,7 @@ class api: NSObject {
                 switch result {
                 case .success(let upload, _, _):
                 upload.validate(statusCode: 200..<600).responseJSON { response in
+                    print("🔴 updaate profile == \(response.response?.statusCode)")
                 completion(response.result.error,response.result.value,response.response?.statusCode)
                     }
                 case .failure(let encodingError):
@@ -204,11 +214,93 @@ class api: NSObject {
     
     class func userSubscription(URL:String,completion: @escaping(_ error:Error?,_ result:Any?,_ code:Int?)->Void) {
         Alamofire.request(URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).validate(statusCode: 200..<600).responseJSON { (response) in
-            print("user subscrption response  === \(response.response?.statusCode)")
             print("user subscrption response  === \(JSON(response.result))")
             completion(response.result.error,response.result.value,response.response?.statusCode)
         }
     }
+    
+    
+    class func updateSubscription(subscription_id:String,logo:UIImage,completion : @escaping (_ error:Error?,_ result:Any?,_ code:Int? ) -> Void){
+        
+        let par : [String:Any] = ["subscription_id":subscription_id,"status":"wait"]
+        
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            for (key, value) in par {
+                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+            }
+//            if logo.size.width != 0 {
+//                multipartFormData.append(logo.jpegData(compressionQuality: 0.6)!, withName: "logo", fileName: "user_image.jpeg", mimeType: "image/jpeg")
+//            }
+            
+        },// usingThreshold:UInt64.init(),
+            to: updateSubscriptionURL,
+            method: .post,
+            headers: nil,
+                         
+            encodingCompletion:{ result in
+                switch result {
+                case .success(let upload, _, _):
+                upload.validate(statusCode: 200..<600).responseJSON { response in
+//                    print("🚀❌ updateSubscription response \(response.response?.statusCode) ")
+//                    switch response.response?.statusCode {
+//                    case 422 :
+//                        if let data = response.data {
+//                            print("🔴 \( JSON(data))")
+//                        }
+//                    default : break
+//                    }
+                completion(response.result.error,response.result.value,response.response?.statusCode)
+                    }
+                case .failure(let encodingError):
+                    print("🚀 updateSubscription encodingError \(encodingError.localizedDescription) ")
+                    print("the error is  : \(encodingError.localizedDescription)")
+                    break
+                }
+            })}
+    
+    
+    
+    class func getSocial(completion: @escaping(_ error:Error?,_ result:Any?,_ code:Int?)->Void) {
+        Alamofire.request(allSettingURL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).validate(statusCode: 200..<600).responseJSON { (response) in
+            print(response)
+            completion(response.result.error,response.result.value,response.response?.statusCode)
+        }
+    }
+    
+    class func getProfile(completion : @escaping (_ error:Error?,_ result:Any?,_ code:Int? ) -> Void){
+        
+        let par : [String:Any] = ["user_id":support.getuserId]
+        
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            for (key, value) in par {
+                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+            }
+        },// usingThreshold:UInt64.init(),
+            to: profileURL,
+            method: .post,
+            headers: nil,
+                         
+            encodingCompletion:{ result in
+                switch result {
+                case .success(let upload, _, _):
+                upload.validate(statusCode: 200..<600).responseJSON { response in
+    //                print("🚀❌ updateSubscription response \(response.response?.statusCode) ")
+//                    switch response.response?.statusCode {
+//                    case 422 :
+//                        if let data = response.data {
+//                            print("🔴 \( JSON(data))")
+//                        }
+//                    default : break
+//                    }
+                completion(response.result.error,response.result.value,response.response?.statusCode)
+                    }
+                case .failure(let encodingError):
+                    print("🚀 updateSubscription encodingError \(encodingError.localizedDescription) ")
+                    print("the error is  : \(encodingError.localizedDescription)")
+                    break
+                }
+            })}
+    
     
 
 }

@@ -236,21 +236,21 @@ class Profile: uploadPhoto,UICollectionViewDelegate,UICollectionViewDataSource,U
                 acc.stopAnimating()
                 return
             }
-            if let imageData = ProfileView.image!.jpegData(compressionQuality: 1.0) {
-                if !api.isConnectedToInternet() {
-                    showErrorWithStatus(Localized("connMSG"))
-                        return
-                }else{
-                    api.updateProfile(targetURL: updateMyProfileUrl, name: name, pass:"", logo: ProfileView.image!) { (error, result, code) in
-                        if code == 200 {
-                            self.save.isUserInteractionEnabled = true
-                            def.set(["name":name,"phone":self.phone!,"logo":imageData], forKey: "userData")
-                            self.acc.stopAnimating()
-                            showSuccessWithStatus(Localized("su"))
-                        }else {
-                            showErrorWithStatus(Localized("errll"))
-                            self.save.isUserInteractionEnabled = true
-                    }}}}
+//            if let imageData = ProfileView.image!.jpegData(compressionQuality: 1.0) {
+//                if !api.isConnectedToInternet() {
+//                    showErrorWithStatus(Localized("connMSG"))
+//                        return
+//                }else{
+//                    api.updateProfile(targetURL: updateMyProfileUrl, name: name, pass:"", logo: ProfileView.image!) { (error, result, code) in
+//                        if code == 200 {
+//                            self.save.isUserInteractionEnabled = true
+//                            def.set(["name":name,"phone":self.phone!,"logo":imageData], forKey: "userData")
+//                            self.acc.stopAnimating()
+//                            showSuccessWithStatus(Localized("su"))
+//                        }else {
+//                            showErrorWithStatus(Localized("errll"))
+//                            self.save.isUserInteractionEnabled = true
+//                    }}}}
         }
         
         

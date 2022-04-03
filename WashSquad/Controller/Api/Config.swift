@@ -10,7 +10,8 @@ import Foundation
 
 
 
-let mainURL = "https://test.washsquadsa.com/api/"
+let mainURL = "http://test.washsquadsa.com/api/"
+//let mainURL = "https://washsquadsa.com/api/"
 let imageURL =  "http://washsquadsa.com/upload/"
 let visitUrl = mainURL + "visit"
 let registerUrl = mainURL + "client/register"
@@ -35,4 +36,7 @@ let getPriceUrl = mainURL + "getPrice"
 let passwordChangeUrl = mainURL + "client/password/change"
 let frogetPassUrl = mainURL + "client/password/forget"
 
-let userSubscriptionURL = mainURL + "order/getSubscription?user_id=\(support.getuserId)"
+let userSubscriptionURL = mainURL + "order/getSubscription?user_id=\(25)" //support.getuserId
+let updateSubscriptionURL = mainURL + "order/update-subscription"
+let allSettingURL = mainURL + "all-social"
+let profileURL = mainURL + "client/profile"

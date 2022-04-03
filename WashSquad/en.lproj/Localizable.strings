@@ -69,4 +69,24 @@
 "FRGPASS"="Forget Password?";
 "subscripe"="Subscripe";
 "requestPostonement"="Request postonement";
-
+"codeHasBeenSend"="Verfication code has been sent to you";
+"new"="New";
+"wait"="Wait";
+"done"="Done";
+"Language"="Language";
+"Yes"="Yes";
+"No"="No";
+"Logout"="Logout";
+"Saturday"="Saturday";
+"Sunday"="Sunday";
+"Monday"="Monday";
+"Tuesday"="Tuesday";
+"Wednesday"="Wednesday";
+"Thursday"="Thursday";
+"Friday"="Friday";
+"details"="Details";
+"takePhoto"="Take a photo";
+"cameraRoll"="Camera Roll";
+"photoLibrary"="Photo library";
+"canel"="Cancel";
+"SAR"="SAR";
