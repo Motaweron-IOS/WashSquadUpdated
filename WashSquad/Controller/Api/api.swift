@@ -302,5 +302,17 @@ class api: NSObject {
             })}
     
     
-
+    class func singleService(service_id:Int,completion: @escaping(_ error:Error?,_ result:Any?,_ code:Int?)->Void) {
+        let body = ["service_id":service_id]
+        Alamofire.request(singleServiceURL, method: .post, parameters: body, encoding: URLEncoding.default, headers: nil).validate(statusCode: 200..<600).responseJSON { (response) in
+            completion(response.result.error,response.result.value,response.response?.statusCode)
+    }}
+    
+    class func getSetting(completion: @escaping(_ error:Error?,_ result:Any?,_ code:Int?)->Void) {
+        Alamofire.request(settingURL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).validate(statusCode: 200..<600).responseJSON { (response) in
+            print(response)
+            completion(response.result.error,response.result.value,response.response?.statusCode)
+        }
+    }
+    
 }

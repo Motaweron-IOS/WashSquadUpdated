@@ -97,6 +97,10 @@ class subSubWashMain: UIViewController,sendBacwards{
     @IBOutlet var mytable: UITableView!
     @IBOutlet var Pic: UIImageView!
     
+    
+    @IBOutlet private weak var packageCollectionView: UICollectionView!
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)        
         if subSubview[0]["level3"].count == 0 {
@@ -580,3 +584,19 @@ extension subSubWashMain {
     }
 }
 
+//MARK: - Networking
+extension subSubWashMain {
+    
+    private func fetchSingleServiceAPI() {
+        ShowActivity(align: view.center, to: view)
+//        api.singleService(service_id: Int(self.serviceId) ?? -1) { error, result, code in
+//            StopActivity()
+//            if code == 200 {
+//
+//            }
+//        }
+    }
+    
+    
+    
+}

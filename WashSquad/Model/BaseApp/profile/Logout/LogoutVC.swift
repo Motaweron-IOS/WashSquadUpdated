@@ -54,6 +54,7 @@ extension LogoutVC {
             switch code {
             case 200:
                 dismissSvProgressHUD()
+                UserDefaults.standard.removeObject(forKey: "user_id")
                 support.deleteAllData
                 deleteAllData(entity:"CartModel")
                 support.deletUserDefaults()

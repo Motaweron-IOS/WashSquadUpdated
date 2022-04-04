@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MOLH
 
 
 class ChnageLanguageVC: UIViewController {
@@ -57,16 +58,21 @@ extension ChnageLanguageVC {
     @objc private func changeLaanguaage(_ sender: AnyObject) {
         if sender.view?.tag == 1 {
             self.lng = "ar"
-            UserDefaults.standard.set(["ar"], forKey: "AppleLanguages")
-            UserDefaults.standard.synchronize()
+            MOLH.setLanguageTo("ar")
         }else if sender.view?.tag == 2 {
             self.lng = "en"
-            UserDefaults.standard.set(["en"], forKey: "AppleLanguages")
-            UserDefaults.standard.synchronize()
+            MOLH.setLanguageTo("en")
         }
-        def.set(self.lng!, forKey: "#CL")
-      //  exit(-1)
-        support.restartApp()
+        if Locale.preferredLanguages[0] != self.lng! {
+            def.set(self.lng!, forKey: "#CL")
+            if self.lng == "en" {UserDefaults.standard.set(["en"], forKey: "AppleLanguages")
+                UserDefaults.standard.synchronize()}else{UserDefaults.standard.set(["ar"], forKey: "AppleLanguages")
+                UserDefaults.standard.synchronize()}
+          // exit(0)
+           // support.restartApp()
+        }
+        MOLH.reset(transition: .transitionCrossDissolve, duration: 0.6)
+
     }
     
     @objc private func dismisAction() {

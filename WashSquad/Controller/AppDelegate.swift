@@ -10,7 +10,7 @@ import UIKit
 import IQKeyboardManagerSwift
 import GoogleMaps
 import CoreData
-
+import MOLH
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
               return .lightContent
         }
         support.AppLangDefaultEnglish
+        MOLHLanguage.setDefaultLanguage("en")
+        MOLH.shared.activate(true)
+        self.reset()
+        
         
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,NSAttributedString.Key.font:appFont() ]
         
@@ -114,3 +118,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
+//MARK:- MOLH
+extension AppDelegate: MOLHResetable {
+    func reset() {
+        if support.checkUserId == true {
+                let sb = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "main")
+                window?.rootViewController = sb
+         } else{
+             let sb = UIStoryboard(name: "Main", bundle: nil)
+             let vc = sb.instantiateInitialViewController()!
+             window?.rootViewController = vc
+     }}
+}
+
+
+
+   

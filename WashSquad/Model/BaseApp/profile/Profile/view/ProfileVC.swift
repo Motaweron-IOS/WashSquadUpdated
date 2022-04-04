@@ -23,7 +23,11 @@ class ProfileVC: UIViewController {
     @IBOutlet private var buttonsCollection: [UIButton]!
     @IBOutlet private var viewsCollection: [UIView]!
     
-    @IBOutlet weak var noSubscripeMessaageLab: UILabel!
+    @IBOutlet weak var noSubscripeMessaageLab: UILabel!{
+        didSet{
+            self.noSubscripeMessaageLab.text = Localized("No subscriptions")
+        }
+    }
     
     @IBOutlet private weak var subscripeBtn: UIButton!{
         didSet{
@@ -47,11 +51,15 @@ class ProfileVC: UIViewController {
     var twitter = ""
     var instagram = ""
     var snapchat = ""
+  
+    var delay_order_sub_limit:Int = 0
+    var time_dealy:Int = 0
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        self.subscripeBtn.isHidden = false
+//        self.requestPostonementBtn.isHidden = true
         self.getSettingAPI()
         self.setViewActions()
         self.getUserSubscription()
@@ -135,16 +143,16 @@ extension ProfileVC {
     
     
     private func changeSubscripeApperance() {
-      for label in labelsCollection {
-        if support.checkUserId == false {
-            label.isHidden = true
+     // for label in labelsCollection {
+          if jsonData.isEmpty == true {
+            //label.isHidden = true
             self.noSubscripeMessaageLab.isHidden = false
             self.requestPostonementBtn.isHidden = true
         }else {
-            label.isHidden = false
+           // label.isHidden = false
             self.noSubscripeMessaageLab.isHidden = true
             self.requestPostonementBtn.isHidden = false
-    }}}
+    }}//}
     
     private func localaizeUI() {
         for label in labelsCollection {
@@ -177,9 +185,11 @@ extension ProfileVC {
                     self.jsonData = JSON(result!)["wash_sub"].arrayValue
                     print("✅ 🚀 userSubscriptionURL = \(self.jsonData)")
                     if self.jsonData.isEmpty == true {
+                        print("✅ yes its not empty")
                         self.subscripeBtn.isHidden = false
                         self.requestPostonementBtn.isHidden = true
                     }else{
+                        print("❌ yes its empty")
                         self.subscripeBtn.isHidden = false
                         self.requestPostonementBtn.isHidden = false
                         for i in self.jsonData {
@@ -212,12 +222,18 @@ extension ProfileVC {
        // if  self.currentJson["status"].stringValue == "new" {
        // self.washStatusLab.text = Localized("new")
         self.washDateLab.text = self.currentJson?["wash_date"].stringValue
-        for i in jsonData {
-            self.filterArrayWithoutDone.removeAll()
-            if i["status"].stringValue != "done" {
-                self.filterArrayWithoutDone.append(i)
+        self.time_dealy = self.currentJson?["time_dealy"].intValue ?? 0
+        if jsonData.isEmpty == false {
+            for i in jsonData {
+                self.filterArrayWithoutDone.removeAll()
+                if i["status"].stringValue != "done" {
+                    self.filterArrayWithoutDone.append(i)
+                }
             }
+        }else{
+            
         }
+      
         self.washLeftLab.text = "\(self.jsonData.count - self.filterArrayWithoutDone.count)"
     }
     
@@ -255,6 +271,22 @@ extension ProfileVC {
                     }else {
                         showErrorWithStatus(Localized("errll"))
     }}}}
+    
+    private func getAppSetting() {
+      api.getSetting { error, result, code in
+            if code == 200 {
+                self.delay_order_sub_limit = JSON(result!)["delay_order_sub_limit"].intValue
+                self.checkIsOverLimit()
+    }}}
+    
+    private func checkIsOverLimit() {
+        if self.time_dealy < self.delay_order_sub_limit {
+            // true
+            
+        }else{
+            
+        }
+    }
     
     
     

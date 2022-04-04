@@ -37,7 +37,6 @@ class SubscriptionVC: UIViewController {
     @IBAction func updateBtn(_ sender: Any) {
      if self.jsonData.isEmpty == true {
             
-         
         }else{
             self.updateSubscriptionsAPI()
     }}
@@ -49,6 +48,7 @@ class SubscriptionVC: UIViewController {
 extension SubscriptionVC {
     
     private func localizeUI() {
+        self.requestPostonementBtn.setTitle(Localized("Subscribe"), for: .normal)
         for label in labelsCollection {
             switch label.tag {
                 case 1 : label.text = Localized("Wash NO")

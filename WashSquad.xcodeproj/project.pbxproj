@@ -13,6 +13,8 @@
 		8484473427F5D1570019C065 /* UpdateProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484473327F5D1570019C065 /* UpdateProfileVC.swift */; };
 		848594F827F9A079000978C3 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848594F727F9A079000978C3 /* ImagePicker.swift */; };
 		848594FA27F9AB37000978C3 /* SoicalHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848594F927F9AB37000978C3 /* SoicalHelper.swift */; };
+		8488F88027FAFA8F002E4C48 /* PackagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8488F87E27FAFA8F002E4C48 /* PackagesCell.swift */; };
+		8488F88127FAFA8F002E4C48 /* PackagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8488F87F27FAFA8F002E4C48 /* PackagesCell.xib */; };
 		8491251127F47128003A47A9 /* SubscriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491251027F47128003A47A9 /* SubscriptionVC.swift */; };
 		8491251527F477F3003A47A9 /* SubscripeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491251327F477F3003A47A9 /* SubscripeCell.swift */; };
 		8491251627F477F3003A47A9 /* SubscripeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8491251427F477F3003A47A9 /* SubscripeCell.xib */; };
@@ -73,6 +75,8 @@
 		8484473327F5D1570019C065 /* UpdateProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileVC.swift; sourceTree = "<group>"; };
 		848594F727F9A079000978C3 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		848594F927F9AB37000978C3 /* SoicalHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoicalHelper.swift; sourceTree = "<group>"; };
+		8488F87E27FAFA8F002E4C48 /* PackagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesCell.swift; sourceTree = "<group>"; };
+		8488F87F27FAFA8F002E4C48 /* PackagesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackagesCell.xib; sourceTree = "<group>"; };
 		8491251027F47128003A47A9 /* SubscriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionVC.swift; sourceTree = "<group>"; };
 		8491251327F477F3003A47A9 /* SubscripeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscripeCell.swift; sourceTree = "<group>"; };
 		8491251427F477F3003A47A9 /* SubscripeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscripeCell.xib; sourceTree = "<group>"; };
@@ -188,6 +192,15 @@
 			path = UpdateProfile;
 			sourceTree = "<group>";
 		};
+		8488F87D27FAFA16002E4C48 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				8488F87E27FAFA8F002E4C48 /* PackagesCell.swift */,
+				8488F87F27FAFA8F002E4C48 /* PackagesCell.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
 		8491250F27F470FA003A47A9 /* Subscription */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +300,7 @@
 		A90479EE2345F2E800D19C67 /* wash */ = {
 			isa = PBXGroup;
 			children = (
+				8488F87D27FAFA16002E4C48 /* Xib */,
 				A9047A072345F95600D19C67 /* washMain.swift */,
 				A9047A0C234622B500D19C67 /* washSub.swift */,
 				A9047A0E23462E0900D19C67 /* subSubWashMain.swift */,
@@ -518,6 +532,7 @@
 				A994BBDB2341F0450064132F /* LaunchScreen.storyboard in Resources */,
 				A9782288234212E400593205 /* Cairo-Regular.ttf in Resources */,
 				8491251627F477F3003A47A9 /* SubscripeCell.xib in Resources */,
+				8488F88127FAFA8F002E4C48 /* PackagesCell.xib in Resources */,
 				A9782286234212E400593205 /* Cairo-Bold.ttf in Resources */,
 				A978228A234212E400593205 /* Cairo-ExtraLight.ttf in Resources */,
 				A994BBE72341F82A0064132F /* Localizable.strings in Resources */,
@@ -603,6 +618,7 @@
 				A92A18EF2344E8C100FD7D85 /* apiDataModel.swift in Sources */,
 				8427902427D8FC3600B14E44 /* IntroVC.swift in Sources */,
 				A92A18E52342364500FD7D85 /* checkPhone.swift in Sources */,
+				8488F88027FAFA8F002E4C48 /* PackagesCell.swift in Sources */,
 				8491251127F47128003A47A9 /* SubscriptionVC.swift in Sources */,
 				8FAE7D6B27DBC2680090D00B /* SettingVC.swift in Sources */,
 				A90FE95E238D2C780067EEAC /* passRest.swift in Sources */,

@@ -24,6 +24,7 @@ PODS:
   - Kingfisher (5.10.0):
     - Kingfisher/Core (= 5.10.0)
   - Kingfisher/Core (5.10.0)
+  - MOLH (1.4.3)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (5.0.0)
 
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - ImageSlideshow/Kingfisher
   - IQKeyboardManagerSwift
   - Kingfisher
+  - MOLH
   - SVProgressHUD
   - SwiftyJSON
 
@@ -56,6 +58,7 @@ SPEC REPOS:
     - ImageSlideshow
     - IQKeyboardManagerSwift
     - Kingfisher
+    - MOLH
     - SVProgressHUD
     - SwiftyJSON
 
@@ -72,9 +75,10 @@ SPEC CHECKSUMS:
   ImageSlideshow: 634865d7d4e96f21e3830a31b51bde768cc94cea
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   Kingfisher: 0bf6eae7c2193f15719915fecb7c2c1c03855f3d
+  MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 5d51c574244f28f79a4940e789a6b17e4c7df72d
+PODFILE CHECKSUM: 2ad939e53b10b478e1e233036848c997a87a15bf
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

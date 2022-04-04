@@ -40,6 +40,7 @@ extension SettingVC {
     }}
     
     private func localizeUI() {
+        self.title = Localized("Setting")
         for i in labelsCollection {
             switch i.tag{
                case 1: i.text = Localized("Language")

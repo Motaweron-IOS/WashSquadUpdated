@@ -14,6 +14,12 @@ import EzPopup
 
 class login: UIViewController,FPNTextFieldDelegate {
 
+    
+    @IBOutlet private weak var registerIconBG: UIView!
+    @IBOutlet private weak var fastOrder: UILabel!{
+        didSet{
+            self.fastOrder.text = Localized("Fast order")
+    }}
     @IBOutlet var acc: UIActivityIndicatorView!
     @IBOutlet var userView: UIView!
     @IBOutlet var phoneView: UIView!
@@ -33,6 +39,7 @@ class login: UIViewController,FPNTextFieldDelegate {
     var Pcode:String?
     var error:Bool?
     lazy var isRegister:Bool = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +80,10 @@ class login: UIViewController,FPNTextFieldDelegate {
            // regbutton.isHidden = false
             forgetPass.setTitle(Localized("FRGPASS"), for: .normal)
          //   regbutton.setTitle(Localized("cret"), for: .normal)
+            self.forgetPass.isHidden = false
         }else {
+            self.registerIconBG.isHidden = true
+            self.forgetPass.isHidden = true
             userView.isHidden = true
             register.setTitle(Localized("VSND"), for: .normal)
             codeView.isHidden = true
@@ -262,10 +272,12 @@ class login: UIViewController,FPNTextFieldDelegate {
     
     private func checkIsRegister() {
         if self.isRegister == true {
+            self.registerIconBG.isHidden = false
             userView.isHidden = false
            // regbutton.setTitle(NSLocalizedString("login", comment: ""), for: .normal)
             register.setTitle(NSLocalizedString("cret", comment: ""), for: .normal)
         }else {
+            self.registerIconBG.isHidden = true
             userView.isHidden = true
          //   regbutton.setTitle(NSLocalizedString("cret", comment: ""), for: .normal)
             register.setTitle(NSLocalizedString("login", comment: ""), for: .normal)

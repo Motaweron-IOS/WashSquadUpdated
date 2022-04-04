@@ -4,7 +4,9 @@
 //
 //  Created by Ghoost on 7/18/19.
 //  Copyright © 2019 CreativeShare. All rights reserved.
-// https://documenter.getpostman.com/view/11297871/UVkgyesX#9e2a2027-2179-4580-b22b-dca1c50489d8
+
+// xxx https://documenter.getpostman.com/view/11297871/UVkgyesX#9e2a2027-2179-4580-b22b-dca1c50489d8 xxx
+// https://documenter.getpostman.com/view/11297871/UVkgyesX#ddea1864-7122-41c3-9c0d-29538d6a3db4
 
 import Foundation
 
@@ -40,3 +42,6 @@ let userSubscriptionURL = mainURL + "order/getSubscription?user_id=\(25)" //supp
 let updateSubscriptionURL = mainURL + "order/update-subscription"
 let allSettingURL = mainURL + "all-social"
 let profileURL = mainURL + "client/profile"
+
+let singleServiceURL = mainURL + "single/service"
+let settingURL = mainURL + "setting"

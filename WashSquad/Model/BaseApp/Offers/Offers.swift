@@ -62,30 +62,12 @@ class Offers:  UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
     
     @IBAction func logout(_ sender: Any) {
-        if !api.isConnectedToInternet() {
-            alert.alertPopUp(title:Localized("err"), msg: Localized("connMSG"), vc: self)
-            return
-            }
-        if !support.checkUserId{
-            alert.registerAlert(v: self)
-            return
-        }
-        
-        showSvProgressHUDwithStatus(nil)
-        api.Logout(URL: logOutUrl, userId:support.getuserId){ (error, result, code) in
-            switch code {
-            case 200:
-                dismissSvProgressHUD()
-                support.deleteAllData
-                deleteAllData(entity:"CartModel")
-                self.present(self.storyboard!.instantiateViewController(withIdentifier: "loginVC"), animated: true, completion: nil)
-             
-            default:
-                dismissSvProgressHUD()
-                alert.alertPopUp(title: Localized("err"), msg: Localized("errll"), vc: self)
-                
-            }
-        }
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "LogoutVC") as! LogoutVC
+        vc.modalTransitionStyle = .coverVertical
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -106,3 +88,27 @@ class Offers:  UIViewController,UITableViewDelegate,UITableViewDataSource {
     
 
 }
+//        if !api.isConnectedToInternet() {
+//            alert.alertPopUp(title:Localized("err"), msg: Localized("connMSG"), vc: self)
+//            return
+//            }
+//        if !support.checkUserId{
+//            alert.registerAlert(v: self)
+//            return
+//        }
+//
+//        showSvProgressHUDwithStatus(nil)
+//        api.Logout(URL: logOutUrl, userId:support.getuserId){ (error, result, code) in
+//            switch code {
+//            case 200:
+//                dismissSvProgressHUD()
+//                support.deleteAllData
+//                deleteAllData(entity:"CartModel")
+//                self.present(self.storyboard!.instantiateViewController(withIdentifier: "loginVC"), animated: true, completion: nil)
+//
+//            default:
+//                dismissSvProgressHUD()
+//                alert.alertPopUp(title: Localized("err"), msg: Localized("errll"), vc: self)
+//
+//            }
+//        }d

@@ -87,30 +87,11 @@ class washMain: UIViewController,UICollectionViewDelegate,UICollectionViewDataSo
     }
         
     @IBAction func logout(_ sender: Any) {
-        if !api.isConnectedToInternet() {
-            alert.alertPopUp(title:Localized("err"), msg: Localized("connMSG"), vc: self)
-            return
-            }
-        if !support.checkUserId{
-            alert.registerAlert(v: self)
-            return
-        }
-        
-        showSvProgressHUDwithStatus(nil)
-        api.Logout(URL: logOutUrl, userId:support.getuserId){ (error, result, code) in
-            switch code {
-            case 200:
-                dismissSvProgressHUD()
-                support.deleteAllData
-                deleteAllData(entity:"CartModel")
-                self.present(self.storyboard!.instantiateViewController(withIdentifier: "loginVC"), animated: true, completion: nil)
-             
-            default:
-                dismissSvProgressHUD()
-                alert.alertPopUp(title: Localized("err"), msg: Localized("errll"), vc: self)
-                
-            }
-        }
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "LogoutVC") as! LogoutVC
+        vc.modalTransitionStyle = .coverVertical
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
     }
     
     
@@ -130,6 +111,10 @@ class washMain: UIViewController,UICollectionViewDelegate,UICollectionViewDataSo
         let cell = collectionView.cellForItem(at: indexPath)
         serviceId = servicesmain[indexPath.row].id
         performSegue(withIdentifier: "goingSub", sender: cell)
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = sb.instantiateViewController(withIdentifier: "washMainCell") as! subSubWashMain
+//            vc.serviceId = self.serviceId
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (UIScreen.main.bounds.width/2)-15 , height: 150.0 )

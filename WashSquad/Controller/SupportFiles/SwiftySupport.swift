@@ -138,10 +138,11 @@ class support: NSObject {
             vc = sb.instantiateViewController(withIdentifier: "main")
         }
         window.rootViewController = vc
+        window.makeKeyAndVisible()
         UIView.transition(with: window, duration: 0.5, options: .curveLinear, animations: nil, completion: nil)
-        
     }
     
+   
     class func saveUserId(token: String) {
         def.set(token, forKey: "user_id")
         def.synchronize()
@@ -175,7 +176,6 @@ class support: NSObject {
     class func deletUserDefaults() {
         def.removeObject(forKey: "user_id")
         UserDefaults.standard.synchronize()
-        
         restartApp()
         
     }
