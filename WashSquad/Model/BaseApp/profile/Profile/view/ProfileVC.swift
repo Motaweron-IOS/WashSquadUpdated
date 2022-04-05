@@ -29,10 +29,7 @@ class ProfileVC: UIViewController {
         }
     }
     
-    @IBOutlet private weak var subscripeBtn: UIButton!{
-        didSet{
-            self.subscripeBtn.setTitle(Localized("details"), for: .normal)
-    }}
+    @IBOutlet private weak var subscripeBtn: UIButton!
     @IBOutlet private weak var requestPostonementBtn: UIButton!{
         didSet{
             self.requestPostonementBtn.setTitle(Localized("requestPostonement"), for: .normal)
@@ -54,6 +51,7 @@ class ProfileVC: UIViewController {
   
     var delay_order_sub_limit:Int = 0
     var time_dealy:Int = 0
+    lazy var isSubscribeEnaable:Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,11 +59,12 @@ class ProfileVC: UIViewController {
 //        self.subscripeBtn.isHidden = false
 //        self.requestPostonementBtn.isHidden = true
         self.getSettingAPI()
+        self.getAppSetting()
         self.setViewActions()
         self.getUserSubscription()
         self.changeSubscripeApperance()
         self.localaizeUI()
-        
+        self.checkIsOverLimit()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,7 +81,7 @@ class ProfileVC: UIViewController {
             navigationController?.navigationBar.compactAppearance = appearance
             navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
-        self.displaayUserData()
+            self.displaayUserData()
     }
     
     
@@ -101,9 +100,17 @@ class ProfileVC: UIViewController {
     
     @IBAction private func subscribeActions(_ sender: UIButton) {
         if sender.tag == 1 {
-            performSegue(withIdentifier: "toSubscrptions", sender: self)
+//            if self.isSubscribeEnaable == true {
+//
+//            }else {
+                performSegue(withIdentifier: "toSubscrptions", sender: self)
+           // }
         }else if sender.tag == 2 {
-            self.updateSubscriptionsAPI()
+           if self.isSubscribeEnaable == true {
+                self.updateSubscriptionsAPI()
+            }else{
+                
+            }
         }
     }
     
@@ -147,11 +154,11 @@ extension ProfileVC {
           if jsonData.isEmpty == true {
             //label.isHidden = true
             self.noSubscripeMessaageLab.isHidden = false
-            self.requestPostonementBtn.isHidden = true
+           // self.requestPostonementBtn.isHidden = true
         }else {
            // label.isHidden = false
             self.noSubscripeMessaageLab.isHidden = true
-            self.requestPostonementBtn.isHidden = false
+          //  self.requestPostonementBtn.isHidden = false
     }}//}
     
     private func localaizeUI() {
@@ -186,17 +193,20 @@ extension ProfileVC {
                     print("✅ 🚀 userSubscriptionURL = \(self.jsonData)")
                     if self.jsonData.isEmpty == true {
                         print("✅ yes its not empty")
-                        self.subscripeBtn.isHidden = false
-                        self.requestPostonementBtn.isHidden = true
+                        self.subscripeBtn.setTitle(Localized("details"), for: .normal)
+                       // self.subscripeBtn.isHidden = false
+                       // self.requestPostonementBtn.isHidden = false
                     }else{
                         print("❌ yes its empty")
-                        self.subscripeBtn.isHidden = false
-                        self.requestPostonementBtn.isHidden = false
+                        self.subscripeBtn.setTitle(Localized("Subscripe"), for: .normal)
+                        //self.subscripeBtn.isHidden = false
+                       // self.requestPostonementBtn.isHidden = true
                         for i in self.jsonData {
-                            if i["status"].stringValue == "new" {
+                            if i["status"].stringValue == "new" || i["status"].stringValue == "wait" {
                                 self.currentJson = i
                                 self.displayCurrentInfo()
-                                break
+                                print("✅ current data === \(i)")
+                                return
          }}}}}}else{
     }}
     
@@ -205,12 +215,16 @@ extension ProfileVC {
         api.updateSubscription(subscription_id: "\(self.currentJson?["id"].intValue ?? 0)", logo: UIImage()) { error, result, code in
             dismissSvProgressHUD()
             if code == 200 {
+                self.daayLab.text = nil
+                self.washDateLab.text = nil
+                self.washLeftLab.text = nil
                 self.getUserSubscription()
-            }else if code == 422 {
+                
+            } else if code == 422 {
               print("🚀 updateSubscription response \(result) ")
 //                if let data =  {
 //                    print("🔴 \( JSON(data))")
-//                }
+//         }
                 
     }}}
     
@@ -219,22 +233,30 @@ extension ProfileVC {
         //self.currentJson?["number_of_wash"].stringValue
         let day =  self.currentJson?["day"].stringValue
         self.daayLab.text = self.checkDate(day: day ?? "")
-       // if  self.currentJson["status"].stringValue == "new" {
        // self.washStatusLab.text = Localized("new")
-        self.washDateLab.text = self.currentJson?["wash_date"].stringValue
+        if  self.currentJson?["status"].stringValue == "wait" {
+            self.washDateLab.text = self.currentJson?["will_wash_date"].stringValue
+         }else  {
+             self.washDateLab.text = self.currentJson?["wash_date"].stringValue
+         }
         self.time_dealy = self.currentJson?["time_dealy"].intValue ?? 0
         if jsonData.isEmpty == false {
+            self.noSubscripeMessaageLab.isHidden = true
             for i in jsonData {
                 self.filterArrayWithoutDone.removeAll()
-                if i["status"].stringValue != "done" {
+                if i["status"].stringValue == "done" {
                     self.filterArrayWithoutDone.append(i)
+                    
                 }
+                print("filterArrayWithoutDone = \(self.filterArrayWithoutDone.count)")
             }
         }else{
-            
+            self.noSubscripeMessaageLab.isHidden = false
         }
-      
+        print("trye = \(self.jsonData.count)")
         self.washLeftLab.text = "\(self.jsonData.count - self.filterArrayWithoutDone.count)"
+        print("tryee = \(self.jsonData.count - self.filterArrayWithoutDone.count)")
+        self.checkIsOverLimit()
     }
     
     func checkDate(day:String) -> String{
@@ -280,13 +302,22 @@ extension ProfileVC {
     }}}
     
     private func checkIsOverLimit() {
-        if self.time_dealy < self.delay_order_sub_limit {
-            // true
-            
-        }else{
-            
-        }
-    }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            print("⛳️  time_dealy \(self.time_dealy) , delay_order_sub_limit \(self.delay_order_sub_limit)")
+            if self.time_dealy < self.delay_order_sub_limit {
+                // true
+                // init request
+                self.isSubscribeEnaable = true
+                self.requestPostonementBtn.isUserInteractionEnabled = true
+                self.requestPostonementBtn.backgroundColor = UIColor(named: "Main")
+                self.subscripeBtn.setTitle(Localized("details"), for: .normal)
+            }else{
+               // self.requestPostonementBtn.backgroundColor = .gray
+                self.subscripeBtn.setTitle(Localized("details"), for: .normal)
+                self.isSubscribeEnaable = false
+                self.requestPostonementBtn.backgroundColor = .gray
+                self.requestPostonementBtn.isUserInteractionEnabled = false
+    }}}
     
     
     

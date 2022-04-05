@@ -11,7 +11,7 @@ import SwiftyJSON
 import Kingfisher
 
 class washSub: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
-    var Subview = [JSON]()
+    var Subview = [JSON]() // lever 2
     @IBOutlet var mycollectionview: UICollectionView!
     var serviceId:String?
     var subServiceId:String?

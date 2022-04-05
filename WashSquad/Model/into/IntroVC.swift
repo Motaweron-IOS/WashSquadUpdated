@@ -22,7 +22,11 @@ class IntroVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+//        if support.checkUserId == true {
+//            print("🚀 ✅ user id === \(support.getuserId)")
+//        } else{
+//            print("🚀 ❌ user id === not here")
+//        }
     }
     
 

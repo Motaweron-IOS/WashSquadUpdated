@@ -81,6 +81,7 @@ class washMain: UIViewController,UICollectionViewDelegate,UICollectionViewDataSo
             let cell = sender as! washMainCell
             let indexPath = mycollectionview.indexPath(for: cell)!
             let vc = segue.destination as! washSub
+            print("⛳️ servicesSub \(servicesSub[indexPath.row])")
             vc.Subview = servicesSub[indexPath.row]
             vc.serviceId = serviceId
         }
@@ -109,12 +110,14 @@ class washMain: UIViewController,UICollectionViewDelegate,UICollectionViewDataSo
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
-        serviceId = servicesmain[indexPath.row].id
-        performSegue(withIdentifier: "goingSub", sender: cell)
-//        let sb = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = sb.instantiateViewController(withIdentifier: "washMainCell") as! subSubWashMain
-//            vc.serviceId = self.serviceId
-//        self.navigationController?.pushViewController(vc, animated: true)
+        if servicesmain.isEmpty == false  {
+            serviceId = servicesmain[indexPath.row].id
+         //   performSegue(withIdentifier: "goingSub", sender: cell)
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "washMainCell") as! subSubWashMain
+            vc.serviceId = self.serviceId
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (UIScreen.main.bounds.width/2)-15 , height: 150.0 )

@@ -43,10 +43,14 @@ class subSubWashMain: UIViewController,sendBacwards{
     var workTimes = [WorkTimes]()
     var cartypesJson = [JSON]()
     var subSubview = [JSON]()
+    
     var typedown = DropDown()
     var brandDown = DropDown()
     var timesDown = DropDown()
-    
+    var placedown = DropDown()
+
+    var placesData = [JSON]()
+
     
     var sendDate = 0
     var userid = ""
@@ -64,7 +68,8 @@ class subSubWashMain: UIViewController,sendBacwards{
     var price = 0.0
     var tempPrice = 0.0
     var totalPrice = 0.0
-    
+    var placeId:String?
+
     // NAMES
     var userName = "???"
     var phone = "???"
@@ -96,19 +101,29 @@ class subSubWashMain: UIViewController,sendBacwards{
     @IBOutlet var mycoll: UICollectionView!
     @IBOutlet var mytable: UITableView!
     @IBOutlet var Pic: UIImageView!
-    
+    @IBOutlet var placeView: UIView!{
+        didSet{
+            self.placeView.addActionn(vc: self, action: #selector(self.placestapped(_:)))
+    }}
+
     
     @IBOutlet private weak var packageCollectionView: UICollectionView!
+    
+    @IBOutlet weak var placeLab: UILabel!{
+        didSet{
+            self.placeLab.text = Localized("Place")
+        }
+    }
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)        
-        if subSubview[0]["level3"].count == 0 {
-            servicesView.heightAnchor.constraint(equalToConstant: 0).isActive = true
-        }
-        mytable.reloadData()
-        mytable.heightAnchor.constraint(equalToConstant: mytable.contentSize.height).isActive = true
+       
+        
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -129,20 +144,14 @@ class subSubWashMain: UIViewController,sendBacwards{
         Pic.layer.cornerRadius = 5.0
         Pic.clipsToBounds = true
         design()
+        
+        self.getSingleService()
         carstypes()
-        if Locale.preferredLanguages[0] == "ar"{
-            serviceName = subSubview[0]["ar_title"].stringValue
-            moredettext.text = subSubview[0]["ar_des"].stringValue
-            titleSubs.text = subSubview[0]["ar_title"].stringValue
-        }else {
-            serviceName = subSubview[0]["en_title"].stringValue
-            moredettext.text = subSubview[0]["en_des"].stringValue
-            titleSubs.text = subSubview[0]["en_title"].stringValue
-        }
-        Pic.kf.setImage(with:ImageResource(downloadURL: URL(string:imageURL + subSubview[0]["image"].stringValue)!))
+         
         moredettext.isHidden = true
         carsizes()
         alltimes()
+        self.getPlacesAPI()
         
         }
     //MARK:- OrderNOW!
@@ -185,20 +194,7 @@ class subSubWashMain: UIViewController,sendBacwards{
         
         }
     }
-    func alltimes(){
-        api.alltimes(URL: alltimesUrl) { (error, result, code) in
-            if JSON(result!)["data"].count != 0 {
-                for i in 0..<JSON(result!)["data"].count {
-                    if JSON(result!)["data"][i]["type"].stringValue == "1" {
-                    self.workTimes.append(WorkTimes(id:JSON(result!)["data"][i]["id"].stringValue , title: JSON(result!)["data"][i]["time_text"].stringValue + " AM", type: JSON(result!)["data"][i]["type"].stringValue))
-                }else{
-                    self.workTimes.append(WorkTimes(id:JSON(result!)["data"][i]["id"].stringValue , title: JSON(result!)["data"][i]["time_text"].stringValue + " PM", type: JSON(result!)["data"][i]["type"].stringValue))
-                    }
-                }
-            }
-        }
-    }
-    
+   
     @IBAction func carTypetapped(_ sender: Any) {
         typedown.anchorView = cartypeView
         if Locale.preferredLanguages[0] == "ar" {typedown.dataSource = cartypesJson.map{$0 ["ar_title"].stringValue} }else{
@@ -222,6 +218,29 @@ class subSubWashMain: UIViewController,sendBacwards{
         }
         typedown.show()
     }
+    
+    @objc func placestapped(_ sender: Any) {
+        placedown.anchorView = placeView
+        if Locale.preferredLanguages[0] == "ar" {
+            placedown.dataSource = placesData.map{$0 ["title_ar"].stringValue}
+           }else{
+            placedown.dataSource = placesData.map{$0 ["title_en"].stringValue}
+        }
+        placedown.customCellConfiguration = { (index,item,cell) -> Void in cell.optionLabel.textAlignment = .center}
+        placedown.bottomOffset = CGPoint(x: 0, y:(placedown.anchorView?.plainView.bounds.height)!)
+        placedown.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.placeId = "\(self.placesData[index]["id"].intValue)"
+            if Locale.preferredLanguages[0] == "ar" {
+                self.placeLab.text = self.placesData[index]["title_ar"].stringValue
+            }else{
+                self.placeLab.text = self.placesData[index]["title_en"].stringValue
+            }
+        }
+        placedown.show()
+    }
+    
+    
+    
     @IBAction func sendingLocaion(_ sender: Any) {
         performSegue(withIdentifier: "getMyLocation", sender: self)
     }
@@ -344,7 +363,7 @@ class subSubWashMain: UIViewController,sendBacwards{
     
 }
 
-//MARK:- CollectionView
+//MARK: - CollectionView
 extension subSubWashMain: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     
@@ -386,7 +405,7 @@ extension subSubWashMain: UICollectionViewDelegate,UICollectionViewDataSource,UI
     
 }
 
-//MARK:- TableView
+//MARK: - TableView
 extension subSubWashMain:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return subSubview[0]["level3"].count
@@ -479,8 +498,7 @@ extension subSubWashMain:UITableViewDelegate,UITableViewDataSource {
    
     
 }
-//MARK:- Design&Funcs
-
+//MARK: - Design&Funcs
 extension subSubWashMain {
     func carsizes(){
         if !api.isConnectedToInternet() {
@@ -587,16 +605,54 @@ extension subSubWashMain {
 //MARK: - Networking
 extension subSubWashMain {
     
-    private func fetchSingleServiceAPI() {
+    private func getSingleService() {
         ShowActivity(align: view.center, to: view)
-//        api.singleService(service_id: Int(self.serviceId) ?? -1) { error, result, code in
-//            StopActivity()
-//            if code == 200 {
-//
-//            }
-//        }
+        api.singleService(service_id: Int(self.serviceId ?? "") ?? 0) { error, result, code in
+            StopActivity()
+            if code == 200 {
+                self.subSubview = JSON(result!)["data"]["level2"].arrayValue
+               //JSON(result!)["data"]["level2"][0].arrayValue
+                print("⛳️ single count === \(self.subSubview.count)")
+                if Locale.preferredLanguages[0] == "ar"{
+                    self.serviceName = self.subSubview[0]["ar_title"].stringValue
+                    self.moredettext.text = self.subSubview[0]["ar_des"].stringValue
+                    self.titleSubs.text = self.subSubview[0]["ar_title"].stringValue
+                }else {
+                    self.serviceName = self.subSubview[0]["en_title"].stringValue
+                    self.moredettext.text = self.subSubview[0]["en_des"].stringValue
+                    self.titleSubs.text = self.subSubview[0]["en_title"].stringValue
+                }
+               // if self.subSubview[0]["level3"].count == 0 {
+                self.Pic.kf.setImage(with:ImageResource(downloadURL: URL(string:imageURL + self.subSubview[0]["image"].stringValue)!))
+                if self.subSubview.count == 0 {
+                    self.servicesView.heightAnchor.constraint(equalToConstant: 0).isActive = true
+                }
+                DispatchQueue.main.async {
+                    self.mytable.reload()
+                    self.mytable.heightAnchor.constraint(equalToConstant: self.mytable.contentSize.height).isActive = true
+                    self.view.layoutIfNeeded()
+                }
+            }
+        }
     }
     
+    func alltimes(){
+        api.alltimes(URL: alltimesUrl) { (error, result, code) in
+            if JSON(result!)["data"].count != 0 {
+                for i in 0..<JSON(result!)["data"].count {
+                    if JSON(result!)["data"][i]["type"].stringValue == "1" {
+                    self.workTimes.append(WorkTimes(id:JSON(result!)["data"][i]["id"].stringValue , title: JSON(result!)["data"][i]["time_text"].stringValue + " AM", type: JSON(result!)["data"][i]["type"].stringValue))
+                }else{
+                    self.workTimes.append(WorkTimes(id:JSON(result!)["data"][i]["id"].stringValue , title: JSON(result!)["data"][i]["time_text"].stringValue + " PM", type: JSON(result!)["data"][i]["type"].stringValue))
+    }}}}}
+    
+    private func getPlacesAPI() {
+        ShowActivity(align: view.center, to: view)
+        api.baseGet(url: placesURL) { error, result, code in
+            StopActivity()
+            if code == 200 {
+                self.placesData = JSON(result!)["data"].arrayValue
+    }}}
     
     
 }

@@ -24,21 +24,26 @@ class SubscriptionVC: UIViewController {
     
     var jsonData = [JSON]()
     var currentJson:JSON?
+    var delay_order_sub_limit:Int = 0
+    var time_dealy:Int = 0
+    lazy var isSubscribeEnaable:Bool = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+          self.getAppSetting()
           self.tableViewConfigs()
           self.getUserSubscription()
-           self.localizeUI()
+          self.localizeUI()
+          self.checkIsOverLimit()
+
     }
     
     
     @IBAction func updateBtn(_ sender: Any) {
-     if self.jsonData.isEmpty == true {
-            
-        }else{
-            self.updateSubscriptionsAPI()
+      if self.isSubscribeEnaable == true {
+             self.updateSubscriptionsAPI()
     }}
     
     
@@ -83,7 +88,7 @@ extension SubscriptionVC {
                         self.requestPostonementBtn.setTitle(Localized("requestPostonement"), for: .normal)
                         self.tableView.reload()
                         for i in self.jsonData {
-                            if i["status"].stringValue == "new" {
+                            if i["status"].stringValue == "new" || i["status"].stringValue == "wait" {
                                 self.currentJson = i
                                 self.displayCurrentInfo()
                                 break
@@ -97,9 +102,20 @@ extension SubscriptionVC {
         self.washNumLab.text = self.currentJson?["number_of_wash"].stringValue
         let day =  self.currentJson?["day"].stringValue
         self.daayLab.text = self.checkDate(day: day ?? "")
-       // if  self.currentJson["status"].stringValue == "new" {
-        self.washStatusLab.text = Localized("new")
-        self.washDateLab.text = self.currentJson?["wash_date"].stringValue
+        
+        if  self.currentJson?["status"].stringValue == "new" {
+          self.washStatusLab.text = Localized("new")
+            self.washDateLab.text = self.currentJson?["wash_date"].stringValue
+        } else  if self.currentJson?["status"].stringValue == "wait" {
+            self.washStatusLab.text = Localized("Wait")
+            self.washDateLab.text = self.currentJson?["will_wash_date"].stringValue
+        }else {
+            self.washDateLab.text = self.currentJson?["wash_date"].stringValue
+        }
+        
+        self.time_dealy = self.currentJson?["time_dealy"].intValue ?? 0
+        self.checkIsOverLimit()
+
 //        }else if self.jsonData[indexPath.row]["status"].stringValue == "done" {
 //            self.washStatusLab.text = Localized("done")
 //            self.washDateLab.text = self.jsonData[indexPath.row]["wash_date"].stringValue
@@ -115,10 +131,34 @@ extension SubscriptionVC {
         api.updateSubscription(subscription_id: "\(self.currentJson?["id"].intValue ?? 0)", logo: UIImage()) { error, result, code in
             dismissSvProgressHUD()
             if code == 200 {
+                self.daayLab.text = nil
+                self.washDateLab.text = nil
+                self.washNumLab.text = nil
                 self.getUserSubscription()
     }}}
     
-   
+    private func checkIsOverLimit() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            print("⛳️  time_dealy \(self.time_dealy) , delay_order_sub_limit \(self.delay_order_sub_limit)")
+            if self.time_dealy < self.delay_order_sub_limit {
+                // true
+                // init request
+                self.isSubscribeEnaable = true
+                self.requestPostonementBtn.isUserInteractionEnabled = true
+                self.requestPostonementBtn.backgroundColor = UIColor(named: "Main")
+            }else{
+                self.isSubscribeEnaable = false
+                self.requestPostonementBtn.backgroundColor = .gray
+                self.requestPostonementBtn.isUserInteractionEnabled = false
+    }}}
+    
+    private func getAppSetting() {
+      api.getSetting { error, result, code in
+            if code == 200 {
+                self.delay_order_sub_limit = JSON(result!)["delay_order_sub_limit"].intValue
+                self.checkIsOverLimit()
+    }}}
+    
     
 }
 //MARK: - TableView Configs
