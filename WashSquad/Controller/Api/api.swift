@@ -322,4 +322,39 @@ class api: NSObject {
             completion(response.result.error,response.result.value,response.response?.statusCode)
     }}
     
+    
+    class func formData(url: String ,par:[String:Any],completion : @escaping (_ error:Error?,_ result:Any?,_ code:Int? ) -> Void){
+        
+        
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            for (key, value) in par {
+                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+            }
+        },// usingThreshold:UInt64.init(),
+            to: url,
+            method: .post,
+            headers: nil,
+                         
+            encodingCompletion:{ result in
+                switch result {
+                case .success(let upload, _, _):
+                upload.validate(statusCode: 200..<600).responseJSON { response in
+    //                print("🚀❌ updateSubscription response \(response.response?.statusCode) ")
+//                    switch response.response?.statusCode {
+//                    case 422 :
+//                        if let data = response.data {
+//                            print("🔴 \( JSON(data))")
+//                        }
+//                    default : break
+//                    }
+                completion(response.result.error,response.result.value,response.response?.statusCode)
+                    }
+                case .failure(let encodingError):
+                    print("🚀 updateSubscription encodingError \(encodingError.localizedDescription) ")
+                    print("the error is  : \(encodingError.localizedDescription)")
+                    break
+                }
+            })}
+    
+    
 }

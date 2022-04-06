@@ -127,6 +127,13 @@ class subSubWashMain: UIViewController,sendBacwards{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        print("⛳️ service is === \(self.serviceId)")
+
+        if self.serviceId == "1" || self.serviceId == "2" || self.serviceId == "3" {
+            
+        }
+        
         pricelabel.text = "\(price) \(Localized("ryal"))"
         totalPriceLabel.text = "\(totalPrice) \(Localized("ryal"))"
         counter.text = "\(count)"
@@ -150,7 +157,7 @@ class subSubWashMain: UIViewController,sendBacwards{
          
         moredettext.isHidden = true
         carsizes()
-        alltimes()
+        //alltimes()
         self.getPlacesAPI()
         
         }
@@ -291,10 +298,10 @@ class subSubWashMain: UIViewController,sendBacwards{
     
     @IBAction func chooserandTapped(_ sender: Any) {
         brandDown.anchorView = brandView
-        if Locale.preferredLanguages[0] == "ar" {brandDown.dataSource = brandTypeJson.map{$0 ["ar_title"].stringValue} }else{
-            brandDown.dataSource = brandTypeJson.map{$0 ["en_title"].stringValue}
+        if Locale.preferredLanguages[0] == "ar" { brandDown.dataSource = brandTypeJson.map{$0 ["ar_title"].stringValue } }else{
+            brandDown.dataSource = brandTypeJson.map{$0 ["en_title"].stringValue }
         }
-        brandDown.customCellConfiguration = { (index, item, cell) -> Void in cell.optionLabel.textAlignment = .center}
+        brandDown.customCellConfiguration = { (index, item, cell) -> Void in cell.optionLabel.textAlignment = .center }
         brandDown.bottomOffset = CGPoint(x: 0, y:(brandDown.anchorView?.plainView.bounds.height)!)
         brandDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.chooseBrandLbl.text = item
@@ -334,14 +341,14 @@ class subSubWashMain: UIViewController,sendBacwards{
             dateFormatter.dateFormat = "yyyy-MM-dd"
             let todaysDate = dateFormatter.string(from: date)
             self!.dateLabel.text = todaysDate
+                self?.fetchTimesAPI(date: todaysDate)
             self!.sendDate = Int(dateFormatter.date(from: todaysDate)!.timeIntervalSince1970)
                 self?.dateString = todaysDate
             self!.orderDate = todaysDate
                 self!.dateError.isHidden = true
-                
-            } else {self!.orderDate = nil;self?.dateLabel.text = Localized("iodate")
-                          }
-                                })
+            } else {
+                self!.orderDate = nil;self?.dateLabel.text = Localized("iodate")
+            }})
                 present(calendarVC, animated: true)
         
     }
@@ -353,7 +360,8 @@ class subSubWashMain: UIViewController,sendBacwards{
             
         }else if segue.identifier == "afterOrder"{
             let vc = segue.destination as! FinalOrderView
-            vc.userid = userid;vc.serviceId = serviceId;vc.subServiceId = subServiceId;vc.carSizeId = carSizeId;vc.carTypeId = carTypeId;vc.Longitude = Longitude;vc.Latitude = Latitude;vc.orderDate = orderDate;vc.tokenWorkTime = tokenWorkTime;vc.Laddress = Laddress;vc.userName = userName;vc.phone = phone;vc.serviceName = serviceName;vc.cartype = cartype;vc.servicePrice = servicePrice;vc.dateString = dateString;vc.services = services;vc.servNames = servNames;vc.brandId = brandId;vc.servicesNames = servicesNames;vc.totalPrice = totalPrice;vc.NCars = "\(count)"
+                vc.userid = userid;vc.serviceId = serviceId;vc.subServiceId = subServiceId;vc.carSizeId = carSizeId;vc.carTypeId = carTypeId;vc.Longitude = Longitude;vc.Latitude = Latitude;vc.orderDate = orderDate;vc.tokenWorkTime = tokenWorkTime;vc.Laddress = Laddress;vc.userName = userName;vc.phone = phone;vc.serviceName = serviceName;vc.cartype = cartype;vc.servicePrice = servicePrice;vc.dateString = dateString;vc.services = services;vc.servNames = servNames;vc.brandId = brandId;vc.servicesNames = servicesNames;vc.totalPrice = totalPrice;vc.NCars = "\(count)"
+                    vc.bookTime = self.timeLable.text ?? ""
         }
     }
     
@@ -408,12 +416,17 @@ extension subSubWashMain: UICollectionViewDelegate,UICollectionViewDataSource,UI
 //MARK: - TableView
 extension subSubWashMain:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return subSubview[0]["level3"].count
+        let level3Data = subSubview.first?["level3"].arrayValue
+        if let count = level3Data?.count {
+            print("🚀 array x count = \(level3Data?.count)")
+            return count
+        }
+        return  0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "SRVCell", for: indexPath) as! servicesCell
-        //cell.ckeck.image = UIImage(named: "B_Unchecked")
+        cell.ckeck.image = UIImage(named: "B_Unchecked")
         for i in servNames {
             if i ==  subSubview[0]["level3"][indexPath.row]["en_title"].stringValue {
                 cell.ckeck.image = UIImage(named: "B_Checked")
@@ -445,24 +458,21 @@ extension subSubWashMain:UITableViewDelegate,UITableViewDataSource {
         if cell.ckeck.image == UIImage(named:"B_Unchecked"){
             api.getPriceApi(serviceId:subSubview[0]["level3"][indexPath.row]["id"].stringValue,carsizeId: carSizeId!) { (error, result, code) in
                 if code == 200{
-                    
                     services.append(["sub_service_id":self.subSubview[0]["level3"][indexPath.row]["id"].stringValue,"price":"\(JSON(result!).doubleValue)"])
                     self.tempPrice += JSON(result!).doubleValue
                     self.totalPrice += (JSON(result!).doubleValue * Double(self.count))
                     self.totalPriceLabel.text = "\(self.totalPrice) \(Localized("ryal"))"
-                    if Locale.preferredLanguages[0] == "ar" {servicesNames.append(["names":self.subSubview[0]["level3"][indexPath.row]["ar_title"].stringValue])}else{servicesNames.append(["names":self.subSubview[0]["level3"][indexPath.row]["en_title"].stringValue])}
-                    if Locale.preferredLanguages[0] == "ar" {
+            if Locale.preferredLanguages[0] == "ar" {servicesNames.append(["names":self.subSubview[0]["level3"][indexPath.row]["ar_title"].stringValue])}else{servicesNames.append(["names":self.subSubview[0]["level3"][indexPath.row]["en_title"].stringValue])}
+            if Locale.preferredLanguages[0] == "ar" {
                         servNames.append(self.subSubview[0]["level3"][indexPath.row]["ar_title"].stringValue)
-                    }else{
+                  }else{
                         servNames.append(self.subSubview[0]["level3"][indexPath.row]["en_title"].stringValue)
-                    }
+                }
                     cell.ckeck.image = UIImage(named:"B_Checked")
                     
-                }else {
+            }else {
                   cell.ckeck.image = UIImage(named:"B_Unchecked")
-                }
-            }
-        }else{
+        }}}else{
             if services.count != 0 {
                 api.getPriceApi(serviceId:subSubview[0]["level3"][indexPath.row]["id"].stringValue,carsizeId: carSizeId!) { (error, result, code) in
                     if code == 200{
@@ -482,12 +492,7 @@ extension subSubWashMain:UITableViewDelegate,UITableViewDataSource {
                         cell.ckeck.image = UIImage(named:"B_Unchecked")
                     }else{
                       cell.ckeck.image = UIImage(named:"B_Checked")
-                    }
-                }
-                
-            }
-
-        }
+        }}}}
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
@@ -500,51 +505,7 @@ extension subSubWashMain:UITableViewDelegate,UITableViewDataSource {
 }
 //MARK: - Design&Funcs
 extension subSubWashMain {
-    func carsizes(){
-        if !api.isConnectedToInternet() {
-                   alert.alertPopUp(title: Localized("err"), msg: Localized("conMSG"), vc: self)
-                   return
-        }else {
-            ShowActivity(align: mycoll.center, to: mycoll)
-            api.carSizes(URL: carSizesUrl) { (error, result, code) in
-                if code == 200 {
-                    if Locale.preferredLanguages[0] == "ar" {
-                    for i in 0..<JSON(result!)["data"].count {
-                        self.carSizes.append(allServicesLev2(id: JSON(result!)["data"][i]["id"].stringValue, title: JSON(result!)["data"][i]["ar_title"].stringValue, image: JSON(result!)["data"][i]["image"].stringValue, price:JSON(result!)["data"][i]["price"].stringValue))
-                        }
-                    }else{
-                    for i in 0..<JSON(result!)["data"].count {
-                        self.carSizes.append(allServicesLev2(id: JSON(result!)["data"][i]["id"].stringValue, title: JSON(result!)["data"][i]["en_title"].stringValue, image: JSON(result!)["data"][i]["image"].stringValue, price: JSON(result!)["data"][i]["price"].stringValue))
-                        }
-                        
-                    }
-                    StopActivity()
-                    self.mycoll.reloadData()
-            }
-            
-            
-        }
-    }
-        }
     
-    func carstypes(){
-        if !api.isConnectedToInternet() {
-             alert.alertPopUp(title: Localized("err"), msg: Localized("conMSG"), vc: self)
-                       return
-            }else {
-            acc.startAnimating()
-                api.AllCartypesAPI(URL: getCarTypes) { (error, result, code) in
-                    if code == 200 {
-                        self.cartypesJson = JSON(result!)["data"].arrayValue
-                        self.acc.stopAnimating()
- 
-                }
-                
-                
-            }
-        }
-        
-    }
     func profileData(){
         
     }
@@ -611,8 +572,9 @@ extension subSubWashMain {
             StopActivity()
             if code == 200 {
                 self.subSubview = JSON(result!)["data"]["level2"].arrayValue
+                self.subServiceId = "\(JSON(result!)["data"]["level2"].arrayValue.first?["id"].intValue ?? 0)"
                //JSON(result!)["data"]["level2"][0].arrayValue
-                print("⛳️ single count === \(self.subSubview.count)")
+                print("⛳️ single count === \(self.subSubview)")
                 if Locale.preferredLanguages[0] == "ar"{
                     self.serviceName = self.subSubview[0]["ar_title"].stringValue
                     self.moredettext.text = self.subSubview[0]["ar_des"].stringValue
@@ -629,12 +591,10 @@ extension subSubWashMain {
                 }
                 DispatchQueue.main.async {
                     self.mytable.reload()
-                    self.mytable.heightAnchor.constraint(equalToConstant: self.mytable.contentSize.height).isActive = true
+                    let newHeight = 44 * (self.subSubview.first?["level3"].arrayValue.count ?? 0)
+                    self.mytable.heightAnchor.constraint(equalToConstant: CGFloat(newHeight)).isActive = true
                     self.view.layoutIfNeeded()
-                }
-            }
-        }
-    }
+    }}}}
     
     func alltimes(){
         api.alltimes(URL: alltimesUrl) { (error, result, code) in
@@ -653,6 +613,51 @@ extension subSubWashMain {
             if code == 200 {
                 self.placesData = JSON(result!)["data"].arrayValue
     }}}
+   
+    func carsizes(){
+        if !api.isConnectedToInternet() {
+            alert.alertPopUp(title: Localized("err"), msg: Localized("conMSG"), vc: self)
+            return
+        }else {
+            ShowActivity(align: mycoll.center, to: mycoll)
+            api.carSizes(URL: carSizesUrl) { (error, result, code) in
+             if code == 200 {
+                if Locale.preferredLanguages[0] == "ar" {
+                    for i in 0..<JSON(result!)["data"].count {
+                        self.carSizes.append(allServicesLev2(id: JSON(result!)["data"][i]["id"].stringValue, title: JSON(result!)["data"][i]["ar_title"].stringValue, image: JSON(result!)["data"][i]["image"].stringValue, price:JSON(result!)["data"][i]["price"].stringValue))
+                }}else{
+                   for i in 0..<JSON(result!)["data"].count {
+                        self.carSizes.append(allServicesLev2(id: JSON(result!)["data"][i]["id"].stringValue, title: JSON(result!)["data"][i]["en_title"].stringValue, image: JSON(result!)["data"][i]["image"].stringValue, price: JSON(result!)["data"][i]["price"].stringValue))
+            }}
+                    StopActivity()
+                    self.mycoll.reloadData()
+    }}}}
+    
+    func carstypes(){
+        if !api.isConnectedToInternet() {
+             alert.alertPopUp(title: Localized("err"), msg: Localized("conMSG"), vc: self)
+                       return
+            }else {
+            acc.startAnimating()
+                api.AllCartypesAPI(URL: getCarTypes) { (error, result, code) in
+                    if code == 200 {
+                        self.cartypesJson = JSON(result!)["data"].arrayValue
+                        self.acc.stopAnimating()
+ 
+    }}}}
+    
+    private func fetchTimesAPI(date:String) {
+        ShowActivity(align: view.center, to: view)
+        api.formData(url: timeByDateURL, par: ["date" : date]) { error, result, code in
+            StopActivity()
+         if code == 200 {
+            if JSON(result!)["data"].count != 0 {
+              for i in 0..<JSON(result!)["data"].count {
+                 if JSON(result!)["data"][i]["type"].stringValue == "1" {
+                    self.workTimes.append(WorkTimes(id:JSON(result!)["data"][i]["id"].stringValue , title: JSON(result!)["data"][i]["time_text"].stringValue + " AM", type: JSON(result!)["data"][i]["type"].stringValue))
+                }else{
+                    self.workTimes.append(WorkTimes(id:JSON(result!)["data"][i]["id"].stringValue , title: JSON(result!)["data"][i]["time_text"].stringValue + " PM", type: JSON(result!)["data"][i]["type"].stringValue))
+    }}}}}}
     
     
 }

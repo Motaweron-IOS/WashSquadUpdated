@@ -14,7 +14,12 @@ import SwiftyJSON
 class Offers:  UIViewController,UITableViewDelegate,UITableViewDataSource {
    
     var jsonData = [JSON]()
-    @IBOutlet var offerTableview: UITableView!
+    @IBOutlet var offerTableview: UITableView!{
+        didSet {
+            self.offerTableview.delegate = self
+            self.offerTableview.dataSource = self
+        }
+    }
     
     
     
@@ -83,32 +88,17 @@ class Offers:  UIViewController,UITableViewDelegate,UITableViewDataSource {
         return 258
            
        }
-    
+       
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       // if self.jsonData.isEmpty == false {
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "washMainCell") as! subSubWashMain
+            vc.serviceId = self.jsonData[indexPath.row]["service_id"].intValue.description
+            self.navigationController?.pushViewController(vc, animated: true)
+      //  }
+    }
 
+    
     
 
 }
-//        if !api.isConnectedToInternet() {
-//            alert.alertPopUp(title:Localized("err"), msg: Localized("connMSG"), vc: self)
-//            return
-//            }
-//        if !support.checkUserId{
-//            alert.registerAlert(v: self)
-//            return
-//        }
-//
-//        showSvProgressHUDwithStatus(nil)
-//        api.Logout(URL: logOutUrl, userId:support.getuserId){ (error, result, code) in
-//            switch code {
-//            case 200:
-//                dismissSvProgressHUD()
-//                support.deleteAllData
-//                deleteAllData(entity:"CartModel")
-//                self.present(self.storyboard!.instantiateViewController(withIdentifier: "loginVC"), animated: true, completion: nil)
-//
-//            default:
-//                dismissSvProgressHUD()
-//                alert.alertPopUp(title: Localized("err"), msg: Localized("errll"), vc: self)
-//
-//            }
-//        }d

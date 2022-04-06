@@ -20,6 +20,9 @@ class FinalOrderView: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet var acc: UIActivityIndicatorView!
     @IBOutlet var madaButton: UIButton!
     @IBOutlet var cashButton: UIButton!
+    @IBOutlet var option3Button: UIButton!
+    @IBOutlet var walletButton: UIButton!
+
     @IBOutlet var disCCount: UIButton!
     @IBOutlet var addanother: UIButton!
     @IBOutlet var sendOrder: UIButton!
@@ -39,6 +42,15 @@ class FinalOrderView: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet var labeltohide: UILabel!
     @IBOutlet var cashLbl: UILabel!
     @IBOutlet var madaLbl: UILabel!
+    @IBOutlet weak var optionThreeLab: UILabel!
+    @IBOutlet weak var myWalletLab: UILabel!
+    @IBOutlet var walletValueLbl: UILabel!
+
+    @IBOutlet private weak var userPackName: UILabel!
+    @IBOutlet private weak var userTime: UILabel!
+    @IBOutlet private weak var userAddress: UILabel!
+    @IBOutlet private weak var userCoupon: UILabel!
+    @IBOutlet private weak var userPaymentName: UILabel!
     
     var mesaArr = [WorkTimes]()
     var userid:String!
@@ -68,6 +80,10 @@ class FinalOrderView: UIViewController,UITableViewDelegate,UITableViewDataSource
     var servicesNames = [[String:String]]()
     //
     var paymentId:String?
+    
+    var bookTime:String = ""
+    var bookDate:String = ""
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         mytableview.reloadData()
@@ -78,6 +94,13 @@ class FinalOrderView: UIViewController,UITableViewDelegate,UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        self.userAddress.text = self.Laddress
+        self.userTime.text = "\(bookDate) \(bookTime)"
+        self.userPaymentName.text = paymentName
+        self.userPackName.text = self.serviceName
+        
+        self.profileAPI()
         acc.hidesWhenStopped = true
         if services.count == 0 {
             viewtohide.isHidden = true
@@ -108,17 +131,49 @@ class FinalOrderView: UIViewController,UITableViewDelegate,UITableViewDataSource
         if sender.tag == 0 {
             cashButton.setImage(UIImage(named: "B_Checked"), for: .normal)
             madaButton.setImage(UIImage(named: "B_Unchecked"), for: .normal)
+            option3Button.setImage(UIImage(named: "B_Unchecked"), for: .normal)
+            walletButton.setImage(UIImage(named: "B_Unchecked"), for: .normal)
             cashLbl.textColor = UIColor.black
             madaLbl.textColor = UIColor(rgb:0x9A9A9A)
+            optionThreeLab.textColor = UIColor(rgb:0x9A9A9A)
+            myWalletLab.textColor = UIColor(rgb:0x9A9A9A)
             paymentId = "1"
             paymentName = cashLbl.text
-        }else {
+        }else if sender.tag == 1 {
             madaButton.setImage(UIImage(named: "B_Checked"), for: .normal)
             cashButton.setImage(UIImage(named: "B_Unchecked"), for: .normal)
+            option3Button.setImage(UIImage(named: "B_Unchecked"), for: .normal)
+            walletButton.setImage(UIImage(named: "B_Unchecked"), for: .normal)
             madaLbl.textColor = UIColor.black
             cashLbl.textColor = UIColor(rgb:0x9A9A9A)
+            optionThreeLab.textColor = UIColor(rgb:0x9A9A9A)
+            myWalletLab.textColor = UIColor(rgb:0x9A9A9A)
             paymentId = "2"
             paymentName = madaLbl.text
+        }else if sender.tag == 2 {
+            madaButton.setImage(UIImage(named: "B_Unchecked"), for: .normal)
+            cashButton.setImage(UIImage(named: "B_Unchecked"), for: .normal)
+            option3Button.setImage(UIImage(named: "B_Checked"), for: .normal)
+            walletButton.setImage(UIImage(named: "B_Unchecked"), for: .normal)
+            cashLbl.textColor = UIColor(rgb:0x9A9A9A)
+            madaLbl.textColor = UIColor(rgb:0x9A9A9A)
+            optionThreeLab.textColor = UIColor.black
+            myWalletLab.textColor = UIColor(rgb:0x9A9A9A)
+            paymentId = "3"
+            paymentName = optionThreeLab.text
+#warning("paymentName / paymentId ??")
+        }else if sender.tag == 3 {
+            madaButton.setImage(UIImage(named: "B_Unchecked"), for: .normal)
+            cashButton.setImage(UIImage(named: "B_Unchecked"), for: .normal)
+            option3Button.setImage(UIImage(named: "B_Unchecked"), for: .normal)
+            walletButton.setImage(UIImage(named: "B_Checked"), for: .normal)
+            madaLbl.textColor = UIColor(rgb:0x9A9A9A)
+            cashLbl.textColor = UIColor(rgb:0x9A9A9A)
+            optionThreeLab.textColor = UIColor(rgb:0x9A9A9A)
+            myWalletLab.textColor = UIColor.black
+            paymentId = "4"
+            paymentName = myWalletLab.text
+#warning("paymentName / paymentId ??")
         }
         
     }
@@ -268,3 +323,18 @@ extension FinalOrderView {
     
 }
 
+//MARK: - Networking
+extension FinalOrderView {
+    
+    private func profileAPI() {
+        showSvProgressHUDwithStatus(nil)
+    api.getProfile() { (error, result, code) in
+        dismissSvProgressHUD()
+           if code == 200 {
+               self.walletValueLbl.text = JSON(result!)["wallet"].doubleValue.description
+   }}}
+    
+    
+    
+    
+}

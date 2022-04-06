@@ -117,7 +117,7 @@
 "JGF-78-eXZ.text" = "الاسم";
 
 /* Class = "UILabel"; text = "Mada"; ObjectID = "KMB-cJ-Cq0"; */
-"KMB-cJ-Cq0.text" = "Mada";
+"KMB-cJ-Cq0.text" = "Cash";
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "MWB-gr-Hnp"; */
 "MWB-gr-Hnp.normalTitle" = "الغاء";
@@ -265,7 +265,7 @@
 "otD-2l-SHv.text" = "Label";
 
 /* Class = "UILabel"; text = "Cash"; ObjectID = "pV2-Ev-uqR"; */
-"pV2-Ev-uqR.text" = "Cash";
+"pV2-Ev-uqR.text" = "Apple Pay";
 
 /* Class = "UILabel"; text = "Name"; ObjectID = "py3-Is-DCu"; */
 "py3-Is-DCu.text" = "الاسم";
