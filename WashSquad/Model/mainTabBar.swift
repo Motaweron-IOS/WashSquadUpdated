@@ -10,15 +10,18 @@ import UIKit
 
 
 class mainTabBar: UITabBarController,UITabBarControllerDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         noti.addObserver(self, selector: #selector(Sectr), name: Notification.Name("selctr"), object: nil)
         noti.addObserver(self, selector: #selector(cartType), name: Notification.Name("cartTye"), object: nil)
-
+        
         self.delegate = self
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "cairo", size: 10)!], for: .normal)
-        self.selectedIndex = 2
+        //self.selectedIndex = 2
     }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         cartType()

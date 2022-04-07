@@ -11,6 +11,7 @@ import SwiftyJSON
 import Kingfisher
 import DropDown
 import CalendarFoundation
+import MOLH
 
 protocol sendBacwards{
     func address(address: String,long:Double,Lat:Double)
@@ -50,8 +51,8 @@ class subSubWashMain: UIViewController,sendBacwards{
     var placedown = DropDown()
 
     var placesData = [JSON]()
+    var packagesData = [JSON]()
 
-    
     var sendDate = 0
     var userid = ""
     var serviceId:String?
@@ -114,7 +115,10 @@ class subSubWashMain: UIViewController,sendBacwards{
             self.placeLab.text = Localized("Place")
         }
     }
-    
+    @IBOutlet private weak var carPlateNumberTF: UITextField!{
+        didSet{
+            self.carPlateNumberTF.placeholder = Localized("Car plate number")
+    }}
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -131,7 +135,21 @@ class subSubWashMain: UIViewController,sendBacwards{
         print("⛳️ service is === \(self.serviceId)")
 
         if self.serviceId == "1" || self.serviceId == "2" || self.serviceId == "3" {
-            
+            self.packageCollectionView.isHidden = true
+            self.mycoll.heightAnchor.constraint(equalToConstant: CGFloat(0)).isActive = true
+            self.carPlateNumberTF.isHidden = true
+            self.mycoll.isHidden = false
+            self.mycoll.heightAnchor.constraint(equalToConstant: CGFloat(180)).isActive = true
+        }else if serviceId == "77" {
+//                   let nib = UINib(nibName: "PackagesCell", bundle: nil)
+//                packageCollectionView.register(nib, forCellWithReuseIdentifier: "PackagesCell")
+           //  self.packageCollectionView.registerCell(cellClass: PackagesCell.self)
+            self.packageCollectionView.isHidden = false
+            self.packageCollectionView.heightAnchor.constraint(equalToConstant: CGFloat(170)).isActive = true
+            self.carPlateNumberTF.isHidden = false
+            self.mycoll.isHidden = true
+            self.mycoll.heightAnchor.constraint(equalToConstant: CGFloat(0)).isActive = true
+
         }
         
         pricelabel.text = "\(price) \(Localized("ryal"))"
@@ -161,7 +179,7 @@ class subSubWashMain: UIViewController,sendBacwards{
         self.getPlacesAPI()
         
         }
-    //MARK:- OrderNOW!
+    //MARK: - OrderNOW!
        @IBAction func ordertapped(_ sender: Any) {
         guard let cartype = carTypeId,!cartype.isEmpty else {
             cartypeError.isHidden = false
@@ -371,32 +389,46 @@ class subSubWashMain: UIViewController,sendBacwards{
     
 }
 
-//MARK: - CollectionView
+//MARK: - CollectionView Delegates
 extension subSubWashMain: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     
      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-           if carSizes.count != 0 {return carSizes.count}else{return 0}
+         if collectionView == mycoll {
+             if carSizes.count != 0 {
+                 return carSizes.count
+             } else { return 0 }
+         }else {
+             return self.subSubview.count
+         }
           }
           
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarSCell", for: indexPath) as! carSizeCell
-              if carSizes.count != 0 {
-                cell.title.text = carSizes[indexPath.row].title
-                cell.image.kf.setImage(with: ImageResource(downloadURL: URL(string:imageURL + carSizes[indexPath.row].image)!))
-              }
-            if indexPath == selectedIndex {
-                       cell.biggerView.layer.borderColor = UIColor(rgb:0xC95E2B).cgColor
-                       cell.title.textColor = UIColor(rgb:0xC95E2B)
+            if collectionView == self.mycoll {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarSCell", for: indexPath) as! carSizeCell
+                if carSizes.count != 0 {
+                  cell.title.text = carSizes[indexPath.row].title
+                  cell.image.kf.setImage(with: ImageResource(downloadURL: URL(string:imageURL + carSizes[indexPath.row].image)!))
+                }
+              if indexPath == selectedIndex {
+                         cell.biggerView.layer.borderColor = UIColor(rgb:0xC95E2B).cgColor
+                         cell.title.textColor = UIColor(rgb:0xC95E2B)
 
-                   }else{
-                       
-                       cell.biggerView.layer.borderColor = UIColor.black.cgColor
-                       cell.title.textColor = .black
-                       cell.isSelected = false
-                       
-                   }
-              return cell
+                     }else{
+                         
+                         cell.biggerView.layer.borderColor = UIColor.black.cgColor
+                         cell.title.textColor = .black
+                         cell.isSelected = false
+                         
+                     }
+                return cell
+            }else {
+                let cell = self.packageCollectionView.dequeueReusableCell(withReuseIdentifier: "PackagesCell", for: indexPath) as! PackagesCell
+                
+                    cell.model = self.subSubview[indexPath.row]
+                
+                return cell
+            }
           }
           func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
               selectedIndex = indexPath
@@ -404,7 +436,26 @@ extension subSubWashMain: UICollectionViewDelegate,UICollectionViewDataSource,UI
           }
           
           func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: (UIScreen.main.bounds.width/2)-5 , height: 150.0 )
+              if collectionView == self.mycoll {
+                  return CGSize(width: (UIScreen.main.bounds.width/2)-5 , height: 150.0 )
+              }else {
+                  //return CGSize(width: (UIScreen.main.bounds.width/3)-5 , height: 170 )
+                  let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+
+                        let numberofItem: CGFloat = 3
+
+                        let collectionViewWidth = self.packageCollectionView.bounds.width
+
+                        let extraSpace = (numberofItem - 1) * flowLayout.minimumInteritemSpacing
+
+                        let inset = flowLayout.sectionInset.right + flowLayout.sectionInset.left
+
+                        let width = Int((collectionViewWidth - extraSpace - inset) / numberofItem)
+
+                        print(width)
+
+                        return CGSize(width: width, height: width)
+              }
               
           }
         
@@ -561,6 +612,8 @@ extension subSubWashMain {
         
         
     }
+    
+    
 }
 
 //MARK: - Networking
@@ -575,14 +628,15 @@ extension subSubWashMain {
                 self.subServiceId = "\(JSON(result!)["data"]["level2"].arrayValue.first?["id"].intValue ?? 0)"
                //JSON(result!)["data"]["level2"][0].arrayValue
                 print("⛳️ single count === \(self.subSubview)")
-                if Locale.preferredLanguages[0] == "ar"{
-                    self.serviceName = self.subSubview[0]["ar_title"].stringValue
-                    self.moredettext.text = self.subSubview[0]["ar_des"].stringValue
-                    self.titleSubs.text = self.subSubview[0]["ar_title"].stringValue
+                //if Locale.preferredLanguages[0] == "ar"{
+                if MOLHLanguage.currentAppleLanguage() == "ar"{
+                    self.serviceName = self.subSubview[0]["ar_title"].stringValue.html2String
+                    self.moredettext.text = self.subSubview[0]["ar_des"].stringValue.html2String
+                    self.titleSubs.text = self.subSubview[0]["ar_title"].stringValue.html2String
                 }else {
-                    self.serviceName = self.subSubview[0]["en_title"].stringValue
-                    self.moredettext.text = self.subSubview[0]["en_des"].stringValue
-                    self.titleSubs.text = self.subSubview[0]["en_title"].stringValue
+                    self.serviceName = self.subSubview[0]["en_title"].stringValue.html2String
+                    self.moredettext.text = self.subSubview[0]["en_des"].stringValue.html2String
+                    self.titleSubs.text = self.subSubview[0]["en_title"].stringValue.html2String
                 }
                // if self.subSubview[0]["level3"].count == 0 {
                 self.Pic.kf.setImage(with:ImageResource(downloadURL: URL(string:imageURL + self.subSubview[0]["image"].stringValue)!))
@@ -593,6 +647,11 @@ extension subSubWashMain {
                     self.mytable.reload()
                     let newHeight = 44 * (self.subSubview.first?["level3"].arrayValue.count ?? 0)
                     self.mytable.heightAnchor.constraint(equalToConstant: CGFloat(newHeight)).isActive = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        if self.serviceId == "77" {
+                            self.packageCollectionView.reloadData()
+                        }
+                    }
                     self.view.layoutIfNeeded()
     }}}}
     

@@ -11,15 +11,15 @@ import Kingfisher
 import SwiftyJSON
 
 
-class Offers:  UIViewController,UITableViewDelegate,UITableViewDataSource {
+class Offers:  UIViewController{
    
     var jsonData = [JSON]()
+    
     @IBOutlet var offerTableview: UITableView!{
         didSet {
             self.offerTableview.delegate = self
             self.offerTableview.dataSource = self
-        }
-    }
+    }}
     
     
     
@@ -60,11 +60,7 @@ class Offers:  UIViewController,UITableViewDelegate,UITableViewDataSource {
                 }else {
                     StopActivity()
                     showErrorWithStatus(Localized("errll"))
-                }
-                
-            }
-        }
-    }
+    }}}}
     
     @IBAction func logout(_ sender: Any) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -72,9 +68,17 @@ class Offers:  UIViewController,UITableViewDelegate,UITableViewDataSource {
         vc.modalTransitionStyle = .coverVertical
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true, completion: nil)
-
     }
     
+    
+    
+   
+    
+    
+
+}
+//MARK: - TableView Configs
+extension Offers : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return jsonData.count
        }
@@ -91,6 +95,7 @@ class Offers:  UIViewController,UITableViewDelegate,UITableViewDataSource {
        
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        // if self.jsonData.isEmpty == false {
+            print("🔴 selected cell offer === \(indexPath.row)")
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "washMainCell") as! subSubWashMain
             vc.serviceId = self.jsonData[indexPath.row]["service_id"].intValue.description
@@ -98,7 +103,6 @@ class Offers:  UIViewController,UITableViewDelegate,UITableViewDataSource {
       //  }
     }
 
-    
     
 
 }
