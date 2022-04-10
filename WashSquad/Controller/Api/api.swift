@@ -137,15 +137,22 @@ class api: NSObject {
             completion(response.result.error,response.result.value,response.response?.statusCode)
         }
     }
-    class func MakeOrderApi(serviceId:String,subServiceId:String,carSizeId:String,brandId:String,cartypeId:String,logitude:String,latitude:String,address:String,orderDate:String,orderTimeId:String,numberOfCars:String,paymentId:String,totalPrice:String,couponSerial:String,services:[[String:Any]],completion: @escaping(_ error:Error?,_ result:Any?,_ code:Int?)->Void) {
-        let para:[String:Any] = ["user_id":support.getuserId,"service_id":serviceId,"sub_serv_id":subServiceId,"carSize_id":carSizeId,"brand_id":brandId,"carType_id":cartypeId,"longitude":logitude,"latitude":latitude,"address":address,"order_date":orderDate,"order_time_id":orderTimeId,"number_of_cars":numberOfCars,"payment_method":paymentId,"total_price":totalPrice,"coupon_serial":couponSerial,"sub_services":services]
+    class func MakeOrderApi(serviceId:String,subServiceId:String,carSizeId:String,brandId:String,cartypeId:String,logitude:String,latitude:String,address:String,orderDate:String,orderTimeId:String,numberOfCars:String,paymentId:String,totalPrice:String,couponSerial:String,services:[[String:Any]],place_id:String,total_tax:String,completion: @escaping(_ error:Error?,_ result:Any?,_ code:Int?)->Void) {
+        let para:[String:Any] = ["user_id":support.getuserId,"service_id":serviceId,"sub_serv_id":subServiceId,"carSize_id":carSizeId,"brand_id":brandId,"carType_id":cartypeId,"longitude":logitude,"latitude":latitude,"address":address,"order_date":orderDate,"order_time_id":orderTimeId,"number_of_cars":numberOfCars,"payment_method":paymentId,"total_price":totalPrice,"coupon_serial":couponSerial,"sub_services":services,"place_id":place_id,"total_tax":total_tax]
         
         Alamofire.request(makeOrderUrl, method: .post, parameters: para, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200..<600).responseJSON { (response) in
-            
+            print("🚀  MakeOrderApi === \(response.response?.statusCode)")
+            switch response.response?.statusCode {
+            case 422 :
+                if let data = response.data {
+                    print("🔴 \( JSON(data))")
+                }
+            default : break
+            }
             completion(response.result.error,response.result.value,response.response?.statusCode)
         }
     }
-    
+     
     class func myOrders(page:String,completion: @escaping(_ error:Error?,_ result:Any?,_ code:Int?)->Void) {
         let para = ["user_id":support.getuserId,"page":page]
            Alamofire.request(getMyOrdersUrl, method: .post, parameters: para, encoding: URLEncoding.default, headers: nil).validate(statusCode: 200..<600).responseJSON { (response) in
@@ -190,6 +197,7 @@ class api: NSObject {
     }
     class func getPriceApi(serviceId:String,carsizeId:String,completion: @escaping(_ error:Error?,_ result:Any?,_ code:Int?)->Void) {
            let para = ["service_id":serviceId,"size_id":carsizeId]
+        print("❌ body = \(para)")
               Alamofire.request(getPriceUrl, method: .post, parameters: para, encoding: URLEncoding.default, headers: nil).validate(statusCode: 200..<600).responseJSON { (response) in
                   completion(response.result.error,response.result.value,response.response?.statusCode)
               }

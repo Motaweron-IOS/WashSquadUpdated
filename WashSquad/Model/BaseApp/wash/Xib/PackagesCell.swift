@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftyJSON
+import MOLH
+import Kingfisher
 
 class PackagesCell: UICollectionViewCell {
     
@@ -28,9 +30,25 @@ class PackagesCell: UICollectionViewCell {
     
     var model:JSON?{
         didSet{
-            self.packageName.text = ""
+            if MOLHLanguage.currentAppleLanguage() == "ar" {
+                self.packageName.text = model?["ar_title"].stringValue
+            }else {
+                self.packageName.text = model?["en_title"].stringValue
+            }
+            self.priceVaalue.text = model?["price"].doubleValue.description
+            let packImaage = model?["image"].stringValue ?? "."
+            print("✅ packimage == \(imageURL + packImaage)")
+            self.packageImage.kf.setImage(with: ImageResource(downloadURL: URL(string:imageURL + packImaage)!))
+
         }
     }
+    
+    override var isSelected: Bool {
+        didSet {
+            self.backgroundColor = isSelected ? .systemGray3 : .white
+        }
+    }
+
     
     
     

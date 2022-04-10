@@ -113,21 +113,18 @@ class subSubWashMain: UIViewController,sendBacwards{
     @IBOutlet weak var placeLab: UILabel!{
         didSet{
             self.placeLab.text = Localized("Place")
-        }
-    }
+    }}
     @IBOutlet private weak var carPlateNumberTF: UITextField!{
         didSet{
             self.carPlateNumberTF.placeholder = Localized("Car plate number")
     }}
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)        
-       
-        
-    }
+    @IBOutlet private weak var packageCollectionConstaraint: NSLayoutConstraint!
+    @IBOutlet private weak var carCollectionConstaraint: NSLayoutConstraint!
+   
     
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -136,20 +133,23 @@ class subSubWashMain: UIViewController,sendBacwards{
 
         if self.serviceId == "1" || self.serviceId == "2" || self.serviceId == "3" {
             self.packageCollectionView.isHidden = true
-            self.mycoll.heightAnchor.constraint(equalToConstant: CGFloat(0)).isActive = true
-            self.carPlateNumberTF.isHidden = true
             self.mycoll.isHidden = false
-            self.mycoll.heightAnchor.constraint(equalToConstant: CGFloat(180)).isActive = true
+            self.packageCollectionConstaraint.constant = 0
+            self.carCollectionConstaraint.constant = 180
+            self.carPlateNumberTF.isHidden = true
+           
         }else if serviceId == "77" {
 //                   let nib = UINib(nibName: "PackagesCell", bundle: nil)
 //                packageCollectionView.register(nib, forCellWithReuseIdentifier: "PackagesCell")
            //  self.packageCollectionView.registerCell(cellClass: PackagesCell.self)
             self.packageCollectionView.isHidden = false
-            self.packageCollectionView.heightAnchor.constraint(equalToConstant: CGFloat(170)).isActive = true
-            self.carPlateNumberTF.isHidden = false
             self.mycoll.isHidden = true
-            self.mycoll.heightAnchor.constraint(equalToConstant: CGFloat(0)).isActive = true
-
+            self.packageCollectionConstaraint.constant = 170
+            self.carCollectionConstaraint.constant = 0
+            //heightAnchor.constraint(equalToConstant: CGFloat(0)).isActive = true
+            self.carPlateNumberTF.isHidden = false
+            self.servicesView.heightAnchor.constraint(equalToConstant: 0).isActive = true
+            
         }
         
         pricelabel.text = "\(price) \(Localized("ryal"))"
@@ -328,11 +328,12 @@ class subSubWashMain: UIViewController,sendBacwards{
             self.brandId = self.brandTypeJson[index]["id"].stringValue
             self.cartype = self.cartypelbl.text! + " - " + self.chooseBrandLbl.text!
             self.spinnerPrice.startAnimating()
-            api.getPriceApi(serviceId:self.subServiceId!,carsizeId:self.carSizeId!) { (error, result, code) in
+            api.getPriceApi(serviceId:self.serviceId!,carsizeId:self.carSizeId!) { (error, result, code) in
                 if code == 200 {
                      self.totalPrice = self.totalPrice - self.price
                     self.price = 0.0
                     self.price = JSON(result!).doubleValue
+                    print("✅ price = \(JSON(result!).doubleValue)")
                     self.pricelabel.text = "\(self.price) \(Localized("ryal"))"
                     self.totalPrice = (self.price * Double(self.count)) + self.tempPrice
                     self.totalPriceLabel.text = "\(self.totalPrice) \(Localized("ryal"))"
@@ -359,6 +360,7 @@ class subSubWashMain: UIViewController,sendBacwards{
             dateFormatter.dateFormat = "yyyy-MM-dd"
             let todaysDate = dateFormatter.string(from: date)
             self!.dateLabel.text = todaysDate
+                print("✅ current date =  \(todaysDate)")
                 self?.fetchTimesAPI(date: todaysDate)
             self!.sendDate = Int(dateFormatter.date(from: todaysDate)!.timeIntervalSince1970)
                 self?.dateString = todaysDate
@@ -380,6 +382,7 @@ class subSubWashMain: UIViewController,sendBacwards{
             let vc = segue.destination as! FinalOrderView
                 vc.userid = userid;vc.serviceId = serviceId;vc.subServiceId = subServiceId;vc.carSizeId = carSizeId;vc.carTypeId = carTypeId;vc.Longitude = Longitude;vc.Latitude = Latitude;vc.orderDate = orderDate;vc.tokenWorkTime = tokenWorkTime;vc.Laddress = Laddress;vc.userName = userName;vc.phone = phone;vc.serviceName = serviceName;vc.cartype = cartype;vc.servicePrice = servicePrice;vc.dateString = dateString;vc.services = services;vc.servNames = servNames;vc.brandId = brandId;vc.servicesNames = servicesNames;vc.totalPrice = totalPrice;vc.NCars = "\(count)"
                     vc.bookTime = self.timeLable.text ?? ""
+                    vc.place_id = self.placeId ?? ""
         }
     }
     
@@ -710,12 +713,13 @@ extension subSubWashMain {
         api.formData(url: timeByDateURL, par: ["date" : date]) { error, result, code in
             StopActivity()
          if code == 200 {
+             self.workTimes.removeAll()
             if JSON(result!)["data"].count != 0 {
               for i in 0..<JSON(result!)["data"].count {
                  if JSON(result!)["data"][i]["type"].stringValue == "1" {
-                    self.workTimes.append(WorkTimes(id:JSON(result!)["data"][i]["id"].stringValue , title: JSON(result!)["data"][i]["time_text"].stringValue + " AM", type: JSON(result!)["data"][i]["type"].stringValue))
+                    self.workTimes.append(WorkTimes(id:JSON(result!)["data"][i]["id"].stringValue , title: JSON(result!)["data"][i]["time_text"].stringValue , type: JSON(result!)["data"][i]["type"].stringValue))
                 }else{
-                    self.workTimes.append(WorkTimes(id:JSON(result!)["data"][i]["id"].stringValue , title: JSON(result!)["data"][i]["time_text"].stringValue + " PM", type: JSON(result!)["data"][i]["type"].stringValue))
+                    self.workTimes.append(WorkTimes(id:JSON(result!)["data"][i]["id"].stringValue , title: JSON(result!)["data"][i]["time_text"].stringValue , type: JSON(result!)["data"][i]["type"].stringValue))
     }}}}}}
     
     

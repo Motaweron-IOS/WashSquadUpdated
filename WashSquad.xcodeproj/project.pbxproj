@@ -10,6 +10,7 @@
 		8427902427D8FC3600B14E44 /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427902327D8FC3600B14E44 /* IntroVC.swift */; };
 		844AF89027FEEA4A00C0FF95 /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844AF88F27FEEA4A00C0FF95 /* String+Ex.swift */; };
 		844AF89227FEF2EA00C0FF95 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844AF89127FEF2EA00C0FF95 /* UICollectionView.swift */; };
+		84774FB62802EF3200A3DD1D /* Double + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84774FB52802EF3200A3DD1D /* Double + Extension.swift */; };
 		8484472E27F58D720019C065 /* ChnageLanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484472D27F58D720019C065 /* ChnageLanguageVC.swift */; };
 		8484473127F594D60019C065 /* LogoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484473027F594D60019C065 /* LogoutVC.swift */; };
 		8484473427F5D1570019C065 /* UpdateProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484473327F5D1570019C065 /* UpdateProfileVC.swift */; };
@@ -73,6 +74,7 @@
 		8427902327D8FC3600B14E44 /* IntroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
 		844AF88F27FEEA4A00C0FF95 /* String+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
 		844AF89127FEF2EA00C0FF95 /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		84774FB52802EF3200A3DD1D /* Double + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double + Extension.swift"; sourceTree = "<group>"; };
 		8484472D27F58D720019C065 /* ChnageLanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChnageLanguageVC.swift; sourceTree = "<group>"; };
 		8484473027F594D60019C065 /* LogoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutVC.swift; sourceTree = "<group>"; };
 		8484473327F5D1570019C065 /* UpdateProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileVC.swift; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 				8491251727F47E7D003A47A9 /* TableView + Extesnions.swift */,
 				844AF89127FEF2EA00C0FF95 /* UICollectionView.swift */,
 				844AF88F27FEEA4A00C0FF95 /* String+Ex.swift */,
+				84774FB52802EF3200A3DD1D /* Double + Extension.swift */,
 				8FAE7D6C27DBC5ED0090D00B /* UIView+Ex.swift */,
 				848594F727F9A079000978C3 /* ImagePicker.swift */,
 				A9BC26F1239113EA00D1B71E /* SwiftySupport.swift */,
@@ -633,6 +636,7 @@
 				A9DD0B0A238AC807009306FD /* contactUs.swift in Sources */,
 				A9047A0D234622B500D19C67 /* washSub.swift in Sources */,
 				A937B3D323606E7F002EE410 /* servicesCell.swift in Sources */,
+				84774FB62802EF3200A3DD1D /* Double + Extension.swift in Sources */,
 				8484473127F594D60019C065 /* LogoutVC.swift in Sources */,
 				A911133B23488850000F9DDC /* carSizeCell.swift in Sources */,
 				A994BBCF2341F0430064132F /* AppDelegate.swift in Sources */,

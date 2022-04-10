@@ -84,6 +84,9 @@ class FinalOrderView: UIViewController,UITableViewDelegate,UITableViewDataSource
     var bookTime:String = ""
     var bookDate:String = ""
     
+    var place_id = ""
+    var tax = Double()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         mytableview.reloadData()
@@ -94,6 +97,7 @@ class FinalOrderView: UIViewController,UITableViewDelegate,UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.getAppSetting()
         
         self.userAddress.text = self.Laddress
         self.userTime.text = "\(bookDate) \(bookTime)"
@@ -175,7 +179,7 @@ class FinalOrderView: UIViewController,UITableViewDelegate,UITableViewDataSource
             paymentName = myWalletLab.text
 #warning("paymentName / paymentId ??")
         }
-        
+        self.userPaymentName.text = paymentName
     }
     //MARK:- Sending to Cart
     @IBAction func addOtherOrder(_ sender: UIButton) {
@@ -198,8 +202,7 @@ class FinalOrderView: UIViewController,UITableViewDelegate,UITableViewDataSource
         showSuccessWithStatus(Localized("CRT"))
         noti.post(name: Notification.Name("cartTye"), object: nil)
         self.navigationController?.popToRootViewController(animated: true)
-        
-        
+
         
     }
     
@@ -223,7 +226,16 @@ class FinalOrderView: UIViewController,UITableViewDelegate,UITableViewDataSource
         addtionalLabel.textColor = UIColor.black
         acc2.startAnimating()
         sendOrder.isUserInteractionEnabled = false;sendOrder.isHighlighted = true
-        api.MakeOrderApi(serviceId:serviceId,subServiceId:subServiceId,carSizeId:carSizeId,brandId:brandId,cartypeId:carTypeId, logitude:String(Longitude),latitude:String(Latitude),address:Laddress,orderDate:orderDate,orderTimeId:tokenWorkTime, numberOfCars:NCars,paymentId:ppayment,totalPrice:"\(totalPrice)",couponSerial:couponSerial ?? "", services:services) { (error, result, code) in
+            let totalAmountsValue = self.priceAfterDiscount(percent: tax, price: self.totalPrice)
+            let totalTax = self.totalPrice - totalAmountsValue
+            if paymentId == "4" {
+                guard Double(self.walletValueLbl.text ?? "0.0") ?? 0.0 >= totalPrice else {
+                    self.acc2.stopAnimating()
+                    showErrorWithStatus(Localized("You don`t have enough money in wallet"))
+                    return
+                }
+            }
+            api.MakeOrderApi(serviceId:serviceId,subServiceId:subServiceId,carSizeId:carSizeId,brandId:brandId,cartypeId:carTypeId, logitude:String(Longitude),latitude:String(Latitude),address:Laddress,orderDate:orderDate,orderTimeId:tokenWorkTime, numberOfCars:NCars,paymentId:ppayment,totalPrice:"\(totalPrice)",couponSerial:couponSerial ?? "", services:services,place_id:self.place_id,total_tax: totalTax.description) { (error, result, code) in
             if code == 200 {
                 self.acc2.stopAnimating()
                 showSuccessWithStatus(Localized("suord"))
@@ -337,4 +349,23 @@ extension FinalOrderView {
     
     
     
+}
+//MAARK: - Networking
+extension FinalOrderView {
+    private func getAppSetting() {
+      api.getSetting { error, result, code in
+            if code == 200 {
+                self.tax = JSON(result!)["tax_per"].doubleValue
+    }}}
+    
+}
+//MARK: - Math
+extension FinalOrderView {
+    func priceAfterDiscount(percent:Double, price:Double) -> Double{
+        let val = 100 * percent
+        let value = val / 100.0
+        let pre = (100 - value) / 100
+        let r = "\(pre *  price)"
+        return Double(r)?.rounded(digits: 3) ?? 0
+    }
 }

@@ -27,6 +27,8 @@ class Offers:  UIViewController{
         super.viewDidLoad()
         self.navigationItem.title = Localized("ofrs")
         Offers()
+        print("⛵️✅ Offers === ")
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

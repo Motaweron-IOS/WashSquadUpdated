@@ -31,23 +31,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_txt" translatesAutoresizingMaskIntoConstraints="NO" id="qXL-8R-TwF">
-                                <rect key="frame" x="112.5" y="98.5" width="150" height="150"/>
+                                <rect key="frame" x="112.5" y="85.5" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="XFB-8z-PuI"/>
                                     <constraint firstAttribute="height" constant="150" id="dFn-xt-gLf"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WBY-Kv-KTR">
-                                <rect key="frame" x="62" y="278.5" width="251" height="50"/>
+                                <rect key="frame" x="70" y="265.5" width="235" height="76"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Renew it with wash squad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1VB-Jp-hro">
-                                        <rect key="frame" x="0.0" y="0.0" width="251" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="235" height="34"/>
                                         <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="18"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steam car wash mobile service" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpT-OY-7uB">
-                                        <rect key="frame" x="0.0" y="29" width="251" height="21"/>
+                                        <rect key="frame" x="0.0" y="42" width="235" height="34"/>
                                         <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="18"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -55,7 +55,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bE9-Gq-G4N">
-                                <rect key="frame" x="60" y="358.5" width="255" height="98"/>
+                                <rect key="frame" x="60" y="371.5" width="255" height="98"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjF-zo-9EK">
                                         <rect key="frame" x="0.0" y="0.0" width="255" height="45"/>
@@ -248,7 +248,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFe-4G-2aw">
-                                <rect key="frame" x="211" y="466" width="152" height="30"/>
+                                <rect key="frame" x="219" y="466" width="144" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="90l-75-mB0"/>
                                 </constraints>
@@ -271,7 +271,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fast order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQY-OJ-R8M">
-                                        <rect key="frame" x="128" y="74.5" width="159.5" height="41"/>
+                                        <rect key="frame" x="128" y="62" width="149.5" height="66"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="35"/>
                                         <color key="textColor" name="Main"/>
                                         <nil key="highlightedColor"/>
@@ -367,7 +367,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWV-Hf-a5T">
-                                                    <rect key="frame" x="60.5" y="110" width="42" height="20"/>
+                                                    <rect key="frame" x="62" y="110" width="39.5" height="32"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                                     <color key="textColor" red="0.27058823529999998" green="0.0" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -433,7 +433,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K52-Iv-OFD">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K52-Iv-OFD">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -691,7 +691,7 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMt-0W-Vov">
-                                                                                    <rect key="frame" x="24.5" y="18.5" width="11.5" height="23.5"/>
+                                                                                    <rect key="frame" x="24.5" y="11.5" width="11.5" height="37.5"/>
                                                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="20"/>
                                                                                     <color key="textColor" red="0.27058823529999998" green="0.0" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -745,19 +745,19 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GLZ-vW-kXG">
                                                                 <rect key="frame" x="30" y="41" width="299" height="136"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8R-ko-jKI">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8R-ko-jKI">
                                                                         <rect key="frame" x="10" y="30" width="279" height="32"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaI-OZ-2gH">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaI-OZ-2gH">
                                                                         <rect key="frame" x="10" y="62" width="279" height="32"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpc-zi-gHA">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpc-zi-gHA">
                                                                         <rect key="frame" x="10" y="94" width="279" height="32"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -803,7 +803,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmx-uM-hlv">
-                                                                <rect key="frame" x="158.5" y="185" width="42" height="25"/>
+                                                                <rect key="frame" x="160.5" y="185" width="38.5" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="oCz-28-HY3"/>
                                                                 </constraints>
@@ -812,7 +812,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLf-36-OoY">
-                                                                <rect key="frame" x="158.5" y="218" width="42" height="25"/>
+                                                                <rect key="frame" x="160.5" y="218" width="38.5" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="KzF-E7-Org"/>
                                                                 </constraints>
@@ -1815,13 +1815,13 @@
                                             <rect key="frame" x="10" y="10" width="355" height="93"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKC-PC-gnb">
-                                                    <rect key="frame" x="8" y="8" width="339" height="20"/>
+                                                    <rect key="frame" x="8" y="8" width="339" height="32"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhT-Pb-qOJ">
-                                                    <rect key="frame" x="8" y="65" width="339" height="20"/>
+                                                    <rect key="frame" x="8" y="53" width="339" height="32"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                     <color key="textColor" white="0.67000000000000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1921,7 +1921,7 @@
                                                                     <rect key="frame" x="10" y="10" width="355" height="25"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IT-Qk-xXb">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="305" height="25"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="308.5" height="25"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="25" id="AXN-45-9KK"/>
                                                                             </constraints>
@@ -1930,7 +1930,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIa-Fl-hXN">
-                                                                            <rect key="frame" x="313" y="0.0" width="42" height="25"/>
+                                                                            <rect key="frame" x="316.5" y="0.0" width="38.5" height="25"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="25" id="f6n-yh-xXx"/>
                                                                             </constraints>
@@ -1944,7 +1944,7 @@
                                                                     <rect key="frame" x="10" y="45" width="355" height="25"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqc-kh-ibq">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="305" height="25"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="308.5" height="25"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="25" id="IZq-rm-XBe"/>
                                                                             </constraints>
@@ -1953,7 +1953,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otD-2l-SHv">
-                                                                            <rect key="frame" x="313" y="0.0" width="42" height="25"/>
+                                                                            <rect key="frame" x="316.5" y="0.0" width="38.5" height="25"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="25" id="IPO-Hg-FLM"/>
                                                                             </constraints>
@@ -1967,7 +1967,7 @@
                                                                     <rect key="frame" x="10" y="80" width="355" height="25"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Car Brand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8k4-q4-mX5">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="305" height="25"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="308.5" height="25"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="25" id="uEI-pS-cOh"/>
                                                                             </constraints>
@@ -1976,7 +1976,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdc-HV-UdA">
-                                                                            <rect key="frame" x="313" y="0.0" width="42" height="25"/>
+                                                                            <rect key="frame" x="316.5" y="0.0" width="38.5" height="25"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="25" id="rFc-LM-2mI"/>
                                                                             </constraints>
@@ -1990,7 +1990,7 @@
                                                                     <rect key="frame" x="10" y="115" width="355" height="25"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Service Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gP-tY-Qzf">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="305" height="25"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="308.5" height="25"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="25" id="IC4-IW-PY0"/>
                                                                             </constraints>
@@ -1999,7 +1999,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Af-gU-Lh2">
-                                                                            <rect key="frame" x="313" y="0.0" width="42" height="25"/>
+                                                                            <rect key="frame" x="316.5" y="0.0" width="38.5" height="25"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="25" id="15X-xV-D1C"/>
                                                                             </constraints>
@@ -2013,7 +2013,7 @@
                                                                     <rect key="frame" x="10" y="150" width="355" height="25"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Service Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dI-iJ-E43">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="305" height="25"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="308.5" height="25"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="25" id="KkP-A1-lSH"/>
                                                                             </constraints>
@@ -2022,7 +2022,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEC-uh-hu5">
-                                                                            <rect key="frame" x="313" y="0.0" width="42" height="25"/>
+                                                                            <rect key="frame" x="316.5" y="0.0" width="38.5" height="25"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="25" id="4AH-lE-uaJ"/>
                                                                             </constraints>
@@ -2036,7 +2036,7 @@
                                                                     <rect key="frame" x="10" y="185" width="355" height="25"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Payment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPS-OJ-Jd6">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="305" height="25"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="308.5" height="25"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="25" id="05I-AW-CpN"/>
                                                                             </constraints>
@@ -2045,7 +2045,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBI-qa-MHj">
-                                                                            <rect key="frame" x="313" y="0.0" width="42" height="25"/>
+                                                                            <rect key="frame" x="316.5" y="0.0" width="38.5" height="25"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="25" id="51Z-GL-3U9"/>
                                                                             </constraints>
@@ -2134,7 +2134,7 @@
                                                                     <rect key="frame" x="10" y="411" width="355" height="25"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DfF-Dj-HrJ">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="305" height="25"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="308.5" height="25"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="25" id="QN6-7S-rW0"/>
                                                                             </constraints>
@@ -2143,7 +2143,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Raq-wX-spv">
-                                                                            <rect key="frame" x="313" y="0.0" width="42" height="25"/>
+                                                                            <rect key="frame" x="316.5" y="0.0" width="38.5" height="25"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="25" id="h1u-gG-Bss"/>
                                                                             </constraints>
@@ -2471,10 +2471,10 @@
                         <color key="selectedImageTintColor" red="0.78823529411764703" green="0.36862745098039218" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="NxD-Ck-H14" kind="relationship" relationship="viewControllers" id="Qd1-gt-RLx"/>
-                        <segue destination="o35-7E-Evr" kind="relationship" relationship="viewControllers" id="cpi-VY-SJS"/>
-                        <segue destination="cfl-Ud-b8M" kind="relationship" relationship="viewControllers" id="Ll4-al-dDv"/>
                         <segue destination="OVy-9F-HdK" kind="relationship" relationship="viewControllers" id="qQT-hF-IFO"/>
+                        <segue destination="cfl-Ud-b8M" kind="relationship" relationship="viewControllers" id="Ll4-al-dDv"/>
+                        <segue destination="o35-7E-Evr" kind="relationship" relationship="viewControllers" id="cpi-VY-SJS"/>
+                        <segue destination="NxD-Ck-H14" kind="relationship" relationship="viewControllers" id="Qd1-gt-RLx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VoT-7q-iEt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2595,11 +2595,11 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bRt-dP-OBs">
-                                                    <rect key="frame" x="10" y="10" width="143" height="122"/>
+                                                    <rect key="frame" x="10" y="10" width="143" height="110"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMj-VA-GdV">
-                                                    <rect key="frame" x="5" y="137" width="153" height="20"/>
+                                                    <rect key="frame" x="5" y="125" width="153" height="32"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                                     <color key="textColor" red="0.27058823529999998" green="0.0" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2661,11 +2661,11 @@
             <objects>
                 <viewController storyboardIdentifier="washMainCell" id="jny-2v-Fta" customClass="subSubWashMain" customModule="WashSquad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cw1-PO-JTt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="349"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="256"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0dt-Kb-zZr">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="349"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="256"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLb-gz-uIe">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1195.5"/>
@@ -2738,7 +2738,7 @@
                                             </view>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aDJ-vN-yRj">
                                                 <rect key="frame" x="0.0" y="334" width="414" height="170"/>
-                                                <color key="backgroundColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="170" id="nAj-0L-jyV"/>
                                                 </constraints>
@@ -3269,7 +3269,7 @@
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hiv-qy-4J6">
                                                         <rect key="frame" x="2" y="2" width="390" height="166"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cxr-vn-dDU">
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cxr-vn-dDU">
                                                             <size key="itemSize" width="159" height="169"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -3277,7 +3277,7 @@
                                                         </collectionViewFlowLayout>
                                                         <cells>
                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PackagesCell" reuseIdentifier="PackagesCell" id="1Es-yx-Ucl" customClass="PackagesCell" customModule="WashSquad" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="159" height="169"/>
+                                                                <rect key="frame" x="0.0" y="-1.5" width="159" height="169"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rhy-Dx-F0R">
                                                                     <rect key="frame" x="0.0" y="0.0" width="159" height="169"/>
@@ -3312,7 +3312,7 @@
                                                                                                 <constraint firstAttribute="height" constant="24.5" id="Gln-W5-hLC"/>
                                                                                             </constraints>
                                                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="13"/>
-                                                                                            <color key="textColor" name="Main"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gl4-qZ-o0R">
@@ -3321,7 +3321,7 @@
                                                                                                 <constraint firstAttribute="height" constant="24.5" id="6L7-x2-rMo"/>
                                                                                             </constraints>
                                                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="11"/>
-                                                                                            <color key="textColor" name="Main"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                     </subviews>
@@ -3361,7 +3361,7 @@
                                                         </connections>
                                                     </collectionView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="hiv-qy-4J6" firstAttribute="top" secondItem="RiV-OV-e0I" secondAttribute="top" constant="2" id="1Eg-6O-I3W"/>
                                                     <constraint firstAttribute="height" constant="170" id="RB5-Vf-2wW"/>
@@ -3504,13 +3504,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oHe-4N-xae"/>
-                    <size key="freeformSize" width="414" height="442"/>
+                    <size key="freeformSize" width="414" height="349"/>
                     <connections>
                         <outlet property="Pic" destination="THj-wW-Y1N" id="ZEd-OD-qTt"/>
                         <outlet property="acc" destination="pW8-cA-ypI" id="fov-EB-qkX"/>
                         <outlet property="aview" destination="hb7-dh-Nux" id="UvM-Es-DQi"/>
                         <outlet property="brandView" destination="Mg1-QZ-SCf" id="5vX-eg-hha"/>
                         <outlet property="brandtypeError" destination="bZ2-RN-pBm" id="GDl-Jc-QbZ"/>
+                        <outlet property="carCollectionConstaraint" destination="nAj-0L-jyV" id="255-dO-RzL"/>
                         <outlet property="carPlateNumberTF" destination="mg8-od-XPj" id="XcC-ec-K5V"/>
                         <outlet property="cartypeError" destination="i1h-Ye-4ql" id="0W9-jM-DOR"/>
                         <outlet property="cartypeView" destination="aci-Kl-Tcg" id="UBa-kh-2eZ"/>
@@ -3529,6 +3530,7 @@
                         <outlet property="mycoll" destination="aDJ-vN-yRj" id="Idv-v4-rOD"/>
                         <outlet property="mytable" destination="Afa-aE-ejY" id="ByD-uE-foK"/>
                         <outlet property="orderNowButton" destination="aIh-Xc-dQC" id="3ZP-61-q3u"/>
+                        <outlet property="packageCollectionConstaraint" destination="RB5-Vf-2wW" id="xsl-WW-JDu"/>
                         <outlet property="packageCollectionView" destination="hiv-qy-4J6" id="dAv-on-KPI"/>
                         <outlet property="placeLab" destination="rhZ-wX-BjG" id="9pM-Vz-uba"/>
                         <outlet property="placeView" destination="stb-Wt-2ZX" id="Qu3-Si-PIa"/>
@@ -3572,7 +3574,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-7750.3999999999996" y="364.31784107946032"/>
+            <point key="canvasLocation" x="-7750.3999999999996" y="363.41829085457272"/>
         </scene>
         <!--Final Order View-->
         <scene sceneID="kJO-DA-a2x">
@@ -3586,23 +3588,23 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="635"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="miW-8r-JeU">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1206"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1306"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8T-c1-k4a">
-                                                <rect key="frame" x="8" y="8" width="398" height="90"/>
+                                                <rect key="frame" x="8" y="8" width="398" height="94"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mKH-Px-t9M">
-                                                        <rect key="frame" x="8" y="8" width="382" height="30"/>
+                                                        <rect key="frame" x="8" y="8" width="382" height="32"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar-Purple" translatesAutoresizingMaskIntoConstraints="NO" id="yiv-aE-ur9">
-                                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                                <rect key="frame" x="0.0" y="1" width="30" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="HCW-HQ-hjC"/>
                                                                     <constraint firstAttribute="width" constant="30" id="uNW-7C-f0x"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igT-SO-eIo">
-                                                                <rect key="frame" x="38" y="5" width="344" height="20"/>
+                                                                <rect key="frame" x="38" y="0.0" width="344" height="32"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -3610,17 +3612,17 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="96a-E8-n3c">
-                                                        <rect key="frame" x="8" y="46" width="382" height="30"/>
+                                                        <rect key="frame" x="8" y="48" width="382" height="32"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-purple" translatesAutoresizingMaskIntoConstraints="NO" id="8Xv-xs-2Ni">
-                                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                                <rect key="frame" x="0.0" y="1" width="30" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="428-a2-eht"/>
                                                                     <constraint firstAttribute="width" constant="30" id="EHE-ft-hfM"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEl-zD-0Xe">
-                                                                <rect key="frame" x="38" y="0.0" width="344" height="30"/>
+                                                                <rect key="frame" x="38" y="0.0" width="344" height="32"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -3646,16 +3648,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xat-Wu-2xy">
-                                                <rect key="frame" x="8" y="106" width="398" height="294"/>
+                                                <rect key="frame" x="8" y="110" width="398" height="390"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Discount Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0S-gg-1E4">
-                                                        <rect key="frame" x="8" y="8" width="382" height="20"/>
+                                                        <rect key="frame" x="8" y="8" width="382" height="32"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kbe-4k-O32">
-                                                        <rect key="frame" x="8" y="36" width="382" height="35"/>
+                                                        <rect key="frame" x="8" y="48" width="382" height="35"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9cd-j9-jsf">
                                                                 <rect key="frame" x="0.0" y="0.0" width="289" height="35"/>
@@ -3680,32 +3682,32 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Services" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45b-v5-vg4">
-                                                        <rect key="frame" x="8" y="209" width="382" height="20"/>
+                                                        <rect key="frame" x="8" y="281" width="382" height="32"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFV-fj-vik">
-                                                        <rect key="frame" x="8" y="237" width="382" height="0.5"/>
+                                                        <rect key="frame" x="8" y="321" width="382" height="0.5"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="0.5" id="hst-ny-W7f"/>
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="x2G-fV-Raf">
-                                                        <rect key="frame" x="8" y="79" width="382" height="120"/>
+                                                        <rect key="frame" x="8" y="91" width="382" height="180"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="62P-Cz-rjW">
-                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="32"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGF-78-eXZ">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="45.5" height="20"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="43" height="32"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l31-0U-1Sa">
-                                                                        <rect key="frame" x="340" y="0.0" width="42" height="20"/>
+                                                                        <rect key="frame" x="343.5" y="0.0" width="38.5" height="32"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -3718,16 +3720,16 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="hos-SD-8Ox">
-                                                                <rect key="frame" x="0.0" y="25" width="382" height="20"/>
+                                                                <rect key="frame" x="0.0" y="37" width="382" height="32"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rq-bH-dxi">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="115" height="20"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="108" height="32"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a07-Mj-VHu">
-                                                                        <rect key="frame" x="340" y="0.0" width="42" height="20"/>
+                                                                        <rect key="frame" x="343.5" y="0.0" width="38.5" height="32"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -3735,16 +3737,16 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="OSq-gB-NAn">
-                                                                <rect key="frame" x="0.0" y="50" width="382" height="20"/>
+                                                                <rect key="frame" x="0.0" y="74" width="382" height="32"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEp-5x-O2p">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="20"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="61" height="32"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAW-TE-RgZ">
-                                                                        <rect key="frame" x="340" y="0.0" width="42" height="20"/>
+                                                                        <rect key="frame" x="343.5" y="0.0" width="38.5" height="32"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -3752,16 +3754,16 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="He0-oq-dWP">
-                                                                <rect key="frame" x="0.0" y="75" width="382" height="20"/>
+                                                                <rect key="frame" x="0.0" y="111" width="382" height="32"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wis-dJ-afe">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="97" height="20"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="89" height="32"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0N-wt-s4n">
-                                                                        <rect key="frame" x="340" y="0.0" width="42" height="20"/>
+                                                                        <rect key="frame" x="343.5" y="0.0" width="38.5" height="32"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -3769,16 +3771,16 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="LBW-Qy-dhj">
-                                                                <rect key="frame" x="0.0" y="100" width="382" height="20"/>
+                                                                <rect key="frame" x="0.0" y="148" width="382" height="32"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOw-A9-Lpa">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="20"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="91" height="32"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                                         <color key="textColor" white="0.67000000000000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ig0-vE-0ar">
-                                                                        <rect key="frame" x="340" y="0.0" width="42" height="20"/>
+                                                                        <rect key="frame" x="343.5" y="0.0" width="38.5" height="32"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -3801,7 +3803,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hh1-UO-FYo">
-                                                        <rect key="frame" x="8" y="245.5" width="382" height="0.0"/>
+                                                        <rect key="frame" x="8" y="329.5" width="382" height="0.0"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FSRVCell" rowHeight="50" id="c6e-iF-lfY" customClass="FinalSRV" customModule="WashSquad" customModuleProvider="target">
@@ -3861,23 +3863,23 @@
                                                         </connections>
                                                     </tableView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ykn-lM-FKF">
-                                                        <rect key="frame" x="8" y="253.5" width="382" height="0.5"/>
+                                                        <rect key="frame" x="8" y="337.5" width="382" height="0.5"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="0.5" id="Ajw-u9-U8o"/>
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="y78-ZW-TTh">
-                                                        <rect key="frame" x="8" y="264" width="382" height="20"/>
+                                                        <rect key="frame" x="8" y="348" width="382" height="32"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oN-6O-nBq">
-                                                                <rect key="frame" x="0.0" y="0.0" width="36" height="20"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="35" height="32"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMw-ch-T6a">
-                                                                <rect key="frame" x="363" y="0.0" width="19" height="20"/>
+                                                                <rect key="frame" x="362.5" y="0.0" width="19.5" height="32"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -3885,7 +3887,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ph-qM-4PF">
-                                                        <rect key="frame" x="264" y="37" width="34" height="34"/>
+                                                        <rect key="frame" x="264" y="49" width="34" height="34"/>
                                                         <subviews>
                                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="VdH-UV-KSd">
                                                                 <rect key="frame" x="7" y="7" width="20" height="20"/>
@@ -3931,10 +3933,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8h-ys-xmt">
-                                                <rect key="frame" x="8" y="408" width="398" height="180"/>
+                                                <rect key="frame" x="8" y="508" width="398" height="180"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qM-Xf-Lb8">
-                                                        <rect key="frame" x="8" y="0.0" width="67.5" height="20"/>
+                                                        <rect key="frame" x="8" y="0.0" width="64.5" height="32"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -3947,7 +3949,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fJ2-Xg-Jce">
-                                                        <rect key="frame" x="8" y="30" width="382" height="125"/>
+                                                        <rect key="frame" x="8" y="42" width="382" height="125"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jKs-W5-mWx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="20"/>
@@ -4030,25 +4032,25 @@
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="My wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPT-cn-9h4">
-                                                                        <rect key="frame" x="28" y="0.0" width="72.5" height="20"/>
+                                                                        <rect key="frame" x="28" y="0.0" width="70" height="20"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeX-Gc-IOV">
-                                                                        <rect key="frame" x="108.5" y="0.0" width="28" height="20"/>
+                                                                        <rect key="frame" x="106" y="0.0" width="24.5" height="20"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
                                                                         <color key="textColor" name="Main"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6E-Rf-MnZ">
-                                                                        <rect key="frame" x="144.5" y="0.0" width="19" height="20"/>
+                                                                        <rect key="frame" x="138.5" y="0.0" width="19.5" height="20"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                                         <color key="textColor" name="Main"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="                                     " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIy-m9-7qv">
-                                                                        <rect key="frame" x="171.5" y="0.0" width="210.5" height="20"/>
+                                                                        <rect key="frame" x="166" y="0.0" width="216" height="20"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -4071,7 +4073,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bR0-rx-wtF">
-                                                <rect key="frame" x="30" y="1108" width="354" height="40"/>
+                                                <rect key="frame" x="30" y="1208" width="354" height="40"/>
                                                 <color key="backgroundColor" red="0.27058823529999998" green="0.0" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="ADN-ld-cFa"/>
@@ -4085,7 +4087,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pF-ul-Gs4">
-                                                <rect key="frame" x="30" y="1156" width="354" height="30"/>
+                                                <rect key="frame" x="30" y="1256" width="354" height="30"/>
                                                 <color key="backgroundColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="gKs-x2-wVX"/>
@@ -4099,11 +4101,11 @@
                                                 </connections>
                                             </button>
                                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="RLE-EF-LTE">
-                                                <rect key="frame" x="264" y="1119" width="20" height="20"/>
+                                                <rect key="frame" x="264" y="1219" width="20" height="20"/>
                                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </activityIndicatorView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSA-Uw-Kdh">
-                                                <rect key="frame" x="8" y="596" width="398" height="500"/>
+                                                <rect key="frame" x="8" y="696" width="398" height="500"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jCZ-Jk-Pq2">
                                                         <rect key="frame" x="40" y="8" width="2" height="454"/>
@@ -4252,7 +4254,7 @@
                                                         <rect key="frame" x="83" y="5" width="286" height="59"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="        " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWc-qY-jLH">
-                                                                <rect key="frame" x="4" y="31" width="33.5" height="20"/>
+                                                                <rect key="frame" x="4" y="31" width="26.5" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="unF-l1-6Mi"/>
                                                                 </constraints>
@@ -4261,7 +4263,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENU-Vy-eOQ">
-                                                                <rect key="frame" x="4" y="4" width="38.5" height="20"/>
+                                                                <rect key="frame" x="4" y="4" width="36" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="n7W-lZ-19F"/>
                                                                 </constraints>
@@ -4283,7 +4285,7 @@
                                                         <rect key="frame" x="83" y="105" width="286" height="59"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="        " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhL-2r-AAD">
-                                                                <rect key="frame" x="4" y="31" width="33.5" height="20"/>
+                                                                <rect key="frame" x="4" y="31" width="26.5" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="EL8-wN-ODZ"/>
                                                                 </constraints>
@@ -4292,7 +4294,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day  / time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCd-lP-si0">
-                                                                <rect key="frame" x="4" y="4" width="73" height="20"/>
+                                                                <rect key="frame" x="4" y="4" width="69.5" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="vmv-9x-Pt5"/>
                                                                 </constraints>
@@ -4314,7 +4316,7 @@
                                                         <rect key="frame" x="83" y="205" width="286" height="59"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="          " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hmb-MK-d1y">
-                                                                <rect key="frame" x="4" y="31" width="42" height="20"/>
+                                                                <rect key="frame" x="4" y="31" width="33" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="ESI-6K-raF"/>
                                                                 </constraints>
@@ -4323,7 +4325,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6I2-4J-kyO">
-                                                                <rect key="frame" x="4" y="4" width="37.5" height="20"/>
+                                                                <rect key="frame" x="4" y="4" width="34" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="1cj-uG-bBL"/>
                                                                 </constraints>
@@ -4345,7 +4347,7 @@
                                                         <rect key="frame" x="83" y="305" width="286" height="59"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="      " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYa-Em-JuI">
-                                                                <rect key="frame" x="4" y="31" width="25.5" height="20"/>
+                                                                <rect key="frame" x="4" y="31" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="UTf-pz-ZDA"/>
                                                                 </constraints>
@@ -4354,7 +4356,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kl4-uu-AP8">
-                                                                <rect key="frame" x="4" y="4" width="115" height="20"/>
+                                                                <rect key="frame" x="4" y="4" width="109.5" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="vVT-H1-EqA"/>
                                                                 </constraints>
@@ -4376,7 +4378,7 @@
                                                         <rect key="frame" x="83" y="405" width="286" height="59"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="       " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGQ-AN-3uX">
-                                                                <rect key="frame" x="4" y="31" width="29.5" height="20"/>
+                                                                <rect key="frame" x="4" y="31" width="23.5" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="bKU-Of-LSO"/>
                                                                 </constraints>
@@ -4385,7 +4387,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coupon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXm-LD-lPv">
-                                                                <rect key="frame" x="4" y="4" width="54" height="20"/>
+                                                                <rect key="frame" x="4" y="4" width="48" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="ZPS-W1-KzW"/>
                                                                 </constraints>
@@ -4716,13 +4718,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKY-sb-GgD">
-                                        <rect key="frame" x="94" y="7.5" width="22.5" height="19"/>
+                                        <rect key="frame" x="94" y="7.5" width="18" height="30"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                         <color key="textColor" name="Main"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="        " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Xu-G0-ywq">
-                                        <rect key="frame" x="94" y="34.5" width="36" height="19"/>
+                                        <rect key="frame" x="94" y="45.5" width="28.5" height="30"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -4739,7 +4741,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="9" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05F-DP-Zxl">
-                                                <rect key="frame" x="-1.5" y="31" width="53" height="19"/>
+                                                <rect key="frame" x="0.5" y="20" width="49" height="30"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                 <color key="textColor" name="Main"/>
                                                 <nil key="highlightedColor"/>
@@ -4808,22 +4810,22 @@
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Uf4-4b-qd7">
-                                                        <rect key="frame" x="102" y="20" width="231" height="16.5"/>
+                                                        <rect key="frame" x="102" y="20" width="220.5" height="26.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ME7-Js-meH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="16.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="26.5"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
                                                                 <color key="textColor" name="Main"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtF-rl-Tkb">
-                                                                <rect key="frame" x="87" y="0.0" width="57" height="16.5"/>
+                                                                <rect key="frame" x="83.5" y="0.0" width="53.5" height="26.5"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
                                                                 <color key="textColor" name="Main"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iha-66-Eu1">
-                                                                <rect key="frame" x="174" y="0.0" width="57" height="16.5"/>
+                                                                <rect key="frame" x="167" y="0.0" width="53.5" height="26.5"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
                                                                 <color key="textColor" name="Main"/>
                                                                 <nil key="highlightedColor"/>
@@ -4831,31 +4833,31 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="      " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gk7-h4-RFR">
-                                                        <rect key="frame" x="119" y="51.5" width="23.5" height="16.5"/>
+                                                        <rect key="frame" x="119.5" y="61.5" width="18.5" height="26.5"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRh-1b-ojR">
-                                                        <rect key="frame" x="295" y="51.5" width="19.5" height="16.5"/>
+                                                        <rect key="frame" x="288" y="61.5" width="15.5" height="26.5"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqK-zx-KfN">
-                                                        <rect key="frame" x="217.5" y="60" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="212.5" y="75" width="0.0" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subscriptions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4r-Ti-NrL">
-                                                        <rect key="frame" x="12" y="88" width="72.5" height="14"/>
+                                                        <rect key="frame" x="12" y="88" width="67.5" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                                         <color key="textColor" name="Main"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No subsriptions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAs-DA-RSP">
-                                                        <rect key="frame" x="133" y="67" width="99" height="16.5"/>
+                                                        <rect key="frame" x="136.5" y="62" width="92.5" height="26.5"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -4953,7 +4955,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="345" height="65"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0S-Qz-ZkT">
-                                                                        <rect key="frame" x="8" y="23" width="68" height="19"/>
+                                                                        <rect key="frame" x="8" y="17.5" width="66" height="30"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                                         <color key="textColor" name="Main"/>
                                                                         <nil key="highlightedColor"/>
@@ -4991,7 +4993,7 @@
                                                                 <rect key="frame" x="0.0" y="70" width="345" height="65"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscriptions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmR-wO-2vY">
-                                                                        <rect key="frame" x="8" y="23" width="98.5" height="19"/>
+                                                                        <rect key="frame" x="8" y="17.5" width="91" height="30"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                                         <color key="textColor" name="Main"/>
                                                                         <nil key="highlightedColor"/>
@@ -5028,7 +5030,7 @@
                                                                 <rect key="frame" x="0.0" y="140" width="345" height="65"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The app" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9G-t4-gtR">
-                                                                        <rect key="frame" x="8" y="23" width="59" height="19"/>
+                                                                        <rect key="frame" x="8" y="17.5" width="53.5" height="30"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                                         <color key="textColor" name="Main"/>
                                                                         <nil key="highlightedColor"/>
@@ -5065,7 +5067,7 @@
                                                                 <rect key="frame" x="0.0" y="210" width="345" height="65"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help and support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUP-lm-w1g">
-                                                                        <rect key="frame" x="8" y="23" width="124.5" height="19"/>
+                                                                        <rect key="frame" x="8" y="17.5" width="115.5" height="30"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                                         <color key="textColor" name="Main"/>
                                                                         <nil key="highlightedColor"/>
@@ -5175,7 +5177,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="8" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share and connect with us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoK-R1-itg">
-                                                        <rect key="frame" x="0.5" y="63.5" width="167" height="16.5"/>
+                                                        <rect key="frame" x="6.5" y="53.5" width="155" height="26.5"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
                                                         <color key="textColor" name="Main"/>
                                                         <nil key="highlightedColor"/>
@@ -5311,7 +5313,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6h2-CO-n0S">
-                                                        <rect key="frame" x="40" y="13" width="71" height="19"/>
+                                                        <rect key="frame" x="40" y="7.5" width="65.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                         <color key="textColor" name="Main"/>
                                                         <nil key="highlightedColor"/>
@@ -5349,7 +5351,7 @@
                                                 <rect key="frame" x="0.0" y="47.5" width="359" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Daf-NE-JZT">
-                                                        <rect key="frame" x="40" y="13" width="89.5" height="19"/>
+                                                        <rect key="frame" x="40" y="7.5" width="85.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                         <color key="textColor" name="Main"/>
                                                         <nil key="highlightedColor"/>
@@ -5384,7 +5386,7 @@
                                                 <rect key="frame" x="0.0" y="50" width="359" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTY-n6-dtT">
-                                                        <rect key="frame" x="40" y="13" width="153.5" height="19"/>
+                                                        <rect key="frame" x="40" y="7.5" width="143" height="30"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                         <color key="textColor" name="Main"/>
                                                         <nil key="highlightedColor"/>
@@ -5411,7 +5413,7 @@
                                                 <rect key="frame" x="0.0" y="100" width="359" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DiR-ab-HXh">
-                                                        <rect key="frame" x="40" y="13" width="50.5" height="19"/>
+                                                        <rect key="frame" x="40" y="7.5" width="47" height="30"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                         <color key="textColor" name="Main"/>
                                                         <nil key="highlightedColor"/>
@@ -5521,7 +5523,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="325" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="العربية" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEz-RO-hdm">
-                                                        <rect key="frame" x="12" y="10" width="39" height="20"/>
+                                                        <rect key="frame" x="12" y="4" width="49" height="32"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                         <color key="textColor" name="Main"/>
                                                         <nil key="highlightedColor"/>
@@ -5548,7 +5550,7 @@
                                                 <rect key="frame" x="0.0" y="46" width="325" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAg-Uk-Qbh">
-                                                        <rect key="frame" x="12" y="10" width="55.5" height="20"/>
+                                                        <rect key="frame" x="12" y="4" width="52" height="32"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                         <color key="textColor" name="Main"/>
                                                         <nil key="highlightedColor"/>
@@ -5573,7 +5575,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اللغة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2B-gF-SgW">
-                                        <rect key="frame" x="154.5" y="8" width="26" height="20"/>
+                                        <rect key="frame" x="149.5" y="8" width="36" height="32"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                         <color key="textColor" name="Main"/>
                                         <nil key="highlightedColor"/>
@@ -5640,22 +5642,22 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cashback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwG-YA-n0a">
-                                        <rect key="frame" x="131.5" y="70" width="72.5" height="19"/>
+                                        <rect key="frame" x="135.5" y="70" width="64" height="30"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                         <color key="textColor" name="Main"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0w5-2G-Oxj">
-                                        <rect key="frame" x="136.5" y="97" width="62.5" height="19"/>
+                                        <rect key="frame" x="140.5" y="108" width="54" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rde-hz-mdr">
-                                                <rect key="frame" x="0.0" y="0.0" width="22.5" height="19"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="18" height="30"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyn-dE-M4k">
-                                                <rect key="frame" x="30.5" y="0.0" width="32" height="19"/>
+                                                <rect key="frame" x="26" y="0.0" width="28" height="30"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -5759,28 +5761,28 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="cKL-SN-Xz2">
-                                        <rect key="frame" x="78" y="20" width="269" height="14"/>
+                                        <rect key="frame" x="78" y="20" width="269" height="22.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wash no" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2l-gt-OpF">
-                                                <rect key="frame" x="0.0" y="0.0" width="60.5" height="14"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="60.5" height="22.5"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                                 <color key="textColor" name="Main"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92t-Xr-Qt9">
-                                                <rect key="frame" x="69.5" y="0.0" width="60.5" height="14"/>
+                                                <rect key="frame" x="69.5" y="0.0" width="60.5" height="22.5"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                                 <color key="textColor" name="Main"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qw5-NZ-gy1">
-                                                <rect key="frame" x="139" y="0.0" width="60.5" height="14"/>
+                                                <rect key="frame" x="139" y="0.0" width="60.5" height="22.5"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                                 <color key="textColor" name="Main"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbT-qS-mhz">
-                                                <rect key="frame" x="208.5" y="0.0" width="60.5" height="14"/>
+                                                <rect key="frame" x="208.5" y="0.0" width="60.5" height="22.5"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                                 <color key="textColor" name="Main"/>
                                                 <nil key="highlightedColor"/>
@@ -5788,25 +5790,25 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVH-9p-ytE">
-                                        <rect key="frame" x="103" y="49" width="11" height="15.5"/>
+                                        <rect key="frame" x="104" y="57.5" width="9" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="13"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6B-6j-7Jc">
-                                        <rect key="frame" x="242" y="49" width="11" height="15.5"/>
+                                        <rect key="frame" x="243" y="57.5" width="9" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="13"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmf-fb-V9C">
-                                        <rect key="frame" x="172.5" y="50" width="10.5" height="14"/>
+                                        <rect key="frame" x="174" y="58.5" width="8" height="22.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subscriptions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O70-Rv-5aC">
-                                        <rect key="frame" x="8" y="68" width="72.5" height="14"/>
+                                        <rect key="frame" x="8" y="68" width="67.5" height="22.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                         <color key="textColor" name="Main"/>
                                         <nil key="highlightedColor"/>
@@ -5837,10 +5839,10 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3F-xg-ssK">
-                                        <rect key="frame" x="0.0" y="102" width="359" height="35"/>
+                                        <rect key="frame" x="0.0" y="110.5" width="359" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wash dishs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeQ-ng-3TZ">
-                                                <rect key="frame" x="142" y="9" width="75" height="17.5"/>
+                                                <rect key="frame" x="144" y="3.5" width="71.5" height="28.5"/>
                                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -5854,7 +5856,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lV3-1n-Y7x">
-                                        <rect key="frame" x="0.0" y="137" width="359" height="35"/>
+                                        <rect key="frame" x="0.0" y="145.5" width="359" height="35"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TpC-0w-WsI">
                                                 <rect key="frame" x="4" y="2" width="351" height="31"/>
@@ -5896,7 +5898,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TSe-TZ-HoY">
-                                        <rect key="frame" x="0.0" y="180" width="359" height="235"/>
+                                        <rect key="frame" x="0.0" y="188.5" width="359" height="226.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <connections>
                                             <outlet property="dataSource" destination="UNO-1G-GeC" id="vbq-Li-fEM"/>
@@ -5904,7 +5906,7 @@
                                         </connections>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpy-Xq-LbV">
-                                        <rect key="frame" x="313" y="49" width="7.5" height="15.5"/>
+                                        <rect key="frame" x="314" y="57.5" width="6" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="13"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -6011,13 +6013,13 @@
                                 <rect key="frame" x="20" y="268.5" width="335" height="130"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYh-47-7O7">
-                                        <rect key="frame" x="140.5" y="12" width="54" height="20"/>
+                                        <rect key="frame" x="142.5" y="12" width="50" height="32"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                         <color key="textColor" name="Main"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GIj-7z-Ekw">
-                                        <rect key="frame" x="15" y="52" width="305" height="45"/>
+                                        <rect key="frame" x="15" y="64" width="305" height="45"/>
                                         <subviews>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfk-EA-afZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="148.5" height="45"/>
@@ -6117,7 +6119,7 @@
                                 <rect key="frame" x="20" y="248.5" width="335" height="170"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnw-wm-rYp">
-                                        <rect key="frame" x="140.5" y="12" width="54" height="45"/>
+                                        <rect key="frame" x="142.5" y="12" width="50" height="45"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                         <color key="textColor" name="Main"/>
                                         <nil key="highlightedColor"/>

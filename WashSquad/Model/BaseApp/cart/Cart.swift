@@ -184,7 +184,7 @@ class CartCellProtoType: UITableViewCell,UITableViewDataSource,UITableViewDelega
         }
         
         showSvProgressHUDwithStatus(nil)
-        api.MakeOrderApi(serviceId:arr.serviceId, subServiceId:arr.subServiceId, carSizeId: arr.carSizeId, brandId: arr.brandId, cartypeId: arr.carTypeId, logitude: arr.longitude, latitude: arr.latitude, address: arr.address, orderDate: arr.orderDate, orderTimeId: arr.orderTimeId, numberOfCars: arr.numberOfCars, paymentId:arr.paymentId, totalPrice: arr.totalPrice, couponSerial:arr.couponSerial, services: arr.subServices) { (error, result, code) in
+        api.MakeOrderApi(serviceId:arr.serviceId, subServiceId:arr.subServiceId, carSizeId: arr.carSizeId, brandId: arr.brandId, cartypeId: arr.carTypeId, logitude: arr.longitude, latitude: arr.latitude, address: arr.address, orderDate: arr.orderDate, orderTimeId: arr.orderTimeId, numberOfCars: arr.numberOfCars, paymentId:arr.paymentId, totalPrice: arr.totalPrice, couponSerial:arr.couponSerial, services: arr.subServices,place_id:"", total_tax: "") { (error, result, code) in
             if code == 200 {
                 deleteDataAtIndex(atIndex: self.sendOrder.tag, array: retrieveSavedUsers()!)
                 noti.post(name: Notification.Name("Ref"), object: nil)
